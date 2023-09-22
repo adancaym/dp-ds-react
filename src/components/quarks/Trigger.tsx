@@ -1,5 +1,5 @@
 import { createElement, memo } from "react";
-import { IWithChildren, IWithStyle } from "src/types";
+import { IWithChildren, IWithStyle } from "../hoc";
 
 export const Trigger: React.FC<IWithStyle & IWithChildren> = ({
   children,

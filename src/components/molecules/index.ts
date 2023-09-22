@@ -1,1 +1,2 @@
-export * from './tabs/Tabs';
+export * from "./navigation";
+export * from "./tabs";

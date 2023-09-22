@@ -1,4 +1,4 @@
-import { IWithDescription, IWithStyle } from "src/types";
+import { IWithDescription, IWithStyle } from "src/components";
 import { IWith } from "src/components";
 
 export interface IWithDescriptionProps<T>

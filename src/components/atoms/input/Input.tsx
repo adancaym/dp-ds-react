@@ -1,11 +1,6 @@
 import { FC, createElement } from "react";
 
-import {
-  IComponent,
-  IWithDescription,
-  IWithError,
-  IWithLabel,
-} from "src/types";
+import { IWithDescription, IWithError, IWithLabel } from "src/components";
 import {
   withLabel,
   withError,
@@ -15,6 +10,7 @@ import {
   Reader,
 } from "src/components";
 import { useTheme, MakeInputTheme } from "src/theme";
+import { IComponent } from "src/types";
 
 type InputProps<T> = IReaderProps<T> &
   IComponent &

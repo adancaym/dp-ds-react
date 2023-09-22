@@ -1,5 +1,5 @@
-import { IComponent, IWithChildren, IWithStyle } from "src/types";
-import { Typography, IWith } from "src/components";
+import { IComponent } from "src/types";
+import { Typography, IWith, IWithStyle, IWithChildren } from "src/components";
 import { createElement } from "react";
 
 interface IWithChildrenTextProps<T>

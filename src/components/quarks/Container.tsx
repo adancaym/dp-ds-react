@@ -1,5 +1,6 @@
 import React, { createElement, memo } from "react";
-import { IComponent, IWithChildren, IWithOnClick, IWithStyle } from "src/types";
+import { IComponent } from "src/types";
+import { IWithChildren, IWithOnClick, IWithStyle } from "../hoc";
 
 interface IComponentProps
   extends IComponent,

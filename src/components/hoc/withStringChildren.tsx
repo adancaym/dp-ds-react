@@ -1,5 +1,6 @@
 import { Children, FC, createElement } from "react";
-import { IComponent, IWithChildren } from "src/types";
+import { IComponent } from "src/types";
+import { IWithChildren } from "./types";
 
 export const WithStringChildren =
   <T extends IComponent & IWithChildren>(Component: FC<T>) =>

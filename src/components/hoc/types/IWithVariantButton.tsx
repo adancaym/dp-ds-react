@@ -1,4 +1,4 @@
-import { IVariantButton } from "../theme/types/IVariantButton";
+import { IVariantButton } from "src/theme";
 
 export interface IWithVariantButton {
   variant?: IVariantButton;

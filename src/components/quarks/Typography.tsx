@@ -1,11 +1,11 @@
 import { FC, createElement, memo } from "react";
+import { IComponent } from "src/types";
 import {
-  IComponent,
   IWithChildren,
   IWithElementType,
   IWithOnClick,
   IWithStyle,
-} from "src/types";
+} from "../hoc";
 
 type Props = IComponent &
   IWithChildren &

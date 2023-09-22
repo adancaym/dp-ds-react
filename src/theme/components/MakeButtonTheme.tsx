@@ -1,7 +1,6 @@
 import { CSSProperties } from "react";
 
 import { IPalette, IVariantButton } from "src/theme";
-import { IWithVariantButton } from "src/types";
 
 import {
   space,
@@ -10,6 +9,7 @@ import {
   fonts,
   borderRadius,
 } from "../constants";
+import { IWithVariantButton } from "src/components";
 
 export const MakeButtonTheme = (
   pallete: IPalette,

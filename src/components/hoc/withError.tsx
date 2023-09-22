@@ -1,6 +1,12 @@
-import { IComponent, IWithError, IWithStyle } from "src/types";
-import { Container, Typography, IWith } from "src/components";
+import {
+  Container,
+  Typography,
+  IWith,
+  IWithStyle,
+  IWithError,
+} from "src/components";
 import { createElement } from "react";
+import { IComponent } from "src/types";
 
 type IWithErrorProps<T> = IWith<T> & IWithStyle & IWithError;
 

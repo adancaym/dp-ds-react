@@ -6,7 +6,7 @@ import {
   IWithOnClick,
   IWithStyle,
   IWithVariantButton,
-} from "src/types";
+} from "src/components";
 import { Trigger, withChildrenText, withDescription } from "src/components";
 import { MakeButtonTheme, useTheme } from "src/theme";
 

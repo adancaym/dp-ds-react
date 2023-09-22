@@ -1,5 +1,5 @@
 import { HTMLInputTypeAttribute } from "react";
-import { IWithOnChange, IWithStyle } from "src/types";
+import { IWithOnChange, IWithStyle } from "src/components/hoc";
 
 export type IReaderProps<T> = IWithStyle &
   IWithOnChange<T> & {

@@ -1,6 +1,12 @@
-import { IComponent, IWithLabel, IWithStyle } from "src/types";
-import { Container, Typography, IWith } from "src/components";
+import {
+  Container,
+  Typography,
+  IWith,
+  IWithStyle,
+  IWithLabel,
+} from "src/components";
 import { createElement } from "react";
+import { IComponent } from "src/types";
 
 type IWithLabelProps<T> = IWith<T> & IWithStyle & IWithLabel;
 
