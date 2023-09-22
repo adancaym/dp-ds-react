@@ -12,7 +12,6 @@ export const MakeNavigationTheme = (
     gap: "1rem",
     backgroundColor: pallete.primary.main,
     color: pallete.text.dark,
-    padding: "1rem",
   },
   section: {
     display: "flex",

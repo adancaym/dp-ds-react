@@ -9,6 +9,7 @@ import {
   ITypeData,
   Reader,
 } from "src/components";
+
 import { useTheme, MakeInputTheme } from "src/theme";
 import { IComponent } from "src/types";
 
@@ -47,7 +48,4 @@ const Input = <T extends ITypeData = string>({
 
   return createElement(Component, { ...props, style: inputStyle.input });
 };
-
-let Component = Input;
-
-export default Component;
+export default Input;

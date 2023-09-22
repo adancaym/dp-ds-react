@@ -23,17 +23,17 @@ let Component: FC<ButtonProps> = ({
   ...props
 }) => {
   const { theme } = useTheme();
-  const { typo, ...style } = MakeButtonTheme(theme, variant);
+  const { typography, button } = MakeButtonTheme(theme, variant);
 
   let Component = Trigger;
   Component = withDescription<ButtonProps>({ Component, description });
   Component = withChildrenText<ButtonProps>({
     Component,
     children,
-    style: typo,
+    style: typography,
   });
 
-  return createElement(Component, { ...props, style });
+  return createElement(Component, { ...props, style: button });
 };
 
 Component = memo(Component);

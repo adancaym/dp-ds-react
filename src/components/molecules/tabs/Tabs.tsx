@@ -28,16 +28,14 @@ export const Tabs: FC<ITabsProps> = ({ children }) => {
 
   const Tabs = () => (
     <Container style={toolbar}>
-      {tabs
-        .sort((a, b) => a.name.localeCompare(b.name) || 0)
-        .map(({ label, name }) => (
-          <Typography
-            key={name}
-            onClick={() => setCurrentTab(name)}
-            style={currentTab === name ? tabActive : tab}
-            children={label}
-          />
-        ))}
+      {tabs.map(({ label, name }) => (
+        <Typography
+          key={name}
+          onClick={() => setCurrentTab(name)}
+          style={currentTab === name ? tabActive : tab}
+          children={label}
+        />
+      ))}
     </Container>
   );
 

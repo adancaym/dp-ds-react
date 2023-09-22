@@ -1,7 +1,6 @@
 import { StrictMode } from "react";
-import "./index.css";
 import reportWebVitals from "./reportWebVitals";
-import { ThemeProvider } from "./theme/providers/TehemeProvider";
+import { ThemeProvider } from "./theme";
 import { Router } from "./components/router/Router";
 import * as ReactDom from "react-dom/client";
 

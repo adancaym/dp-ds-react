@@ -3,9 +3,11 @@ import { Typography } from "src/components/quarks";
 import { withNavigation } from "../components/hoc/withNavigation";
 
 const Component = () => (
-  <Container>
-    <Typography>Some text</Typography>
-  </Container>
+  <>
+    <Container>
+      <Typography>Some text</Typography>
+    </Container>
+  </>
 );
 
 export default withNavigation({
