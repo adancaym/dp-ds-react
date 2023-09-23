@@ -31,7 +31,7 @@ export const Sidebar = ({children}: SidebarProps) => {
 const Component = () => (
   <>
     <Container>
-      <Typography>Some text</Typography>
+      <Typography>Github</Typography>
     </Container>
   </>
 );
