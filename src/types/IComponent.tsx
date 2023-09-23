@@ -1,1 +1,4 @@
-export interface IComponent {}
+export interface IComponent {
+    id?: string
+    className?: string
+}
