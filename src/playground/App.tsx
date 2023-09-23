@@ -1,11 +1,12 @@
 import { Container } from "src/components";
 import { Typography } from "src/components/quarks";
 import { withNavigation } from "../components/hoc/withNavigation";
+import React from 'react';
 
 const Component = () => (
   <>
     <Container>
-      <Typography>Some text</Typography>
+      <Typography>Some text in the pagge asdasd</Typography>
     </Container>
   </>
 );
