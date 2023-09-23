@@ -9,8 +9,8 @@ export const withNavigation =
     (
       <>
         <Navigation router={routes}>
-          {routes.map((route) => (
-            <NavigationItem {...route} key={route.path} />
+          {routes.map((route, index) => (
+            <NavigationItem {...route} key={route.path + index} />
           ))}
         </Navigation>
         <Component {...props} />
