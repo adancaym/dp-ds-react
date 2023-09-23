@@ -6,7 +6,7 @@ import React from 'react';
 const Component = () => (
   <>
     <Container>
-      <Typography>Some text in the pagge asdasd</Typography>
+      <Typography>Github</Typography>
     </Container>
   </>
 );
