@@ -1,19 +1,19 @@
-import { FC, createElement } from "react";
-
-import { IWithDescription, IWithError, IWithLabel } from "src/components";
+import { createElement, FC } from 'react';
 import {
-  withLabel,
-  withError,
-  withDescription,
   IReaderProps,
   ITypeData,
+  IWithDescription,
+  IWithError,
+  IWithLabel,
   Reader,
-} from "src/components";
+  withDescription,
+  withError,
+  withLabel,
+} from 'src/components';
+import { MakeInputTheme, useTheme } from 'src/theme';
+import { IComponent } from 'src/types';
 
-import { useTheme, MakeInputTheme } from "src/theme";
-import { IComponent } from "src/types";
-
-type InputProps<T> = IReaderProps<T> &
+export type InputProps<T> = IReaderProps<T> &
   IComponent &
   IWithDescription &
   IWithError &
