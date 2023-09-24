@@ -3,7 +3,8 @@ import { createElement, memo } from 'react';
 import { ITrigger } from './type';
 
 export const Trigger: React.FC<ITrigger> = ({ children, ...props }) => 
-createElement("button", {
+createElement("button", 
+{
   ...props,
   role: 'button',
   className: `trigger ${props.className}`,

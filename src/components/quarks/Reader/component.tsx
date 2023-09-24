@@ -20,11 +20,14 @@ let Component: ElementType = <T extends ITypeData = string>({ onChange, ...props
     onChange(newValue as T);
   };
 
-  return createElement("input", {
+  return createElement("input", 
+  {
     ...props,
     role: "input",
     className: `input input-${props.type} ${props.className}`,
-    onChange: _onChange });
+    onChange: _onChange 
+  }
+  );
 };
 
 Component = memo(Component);
