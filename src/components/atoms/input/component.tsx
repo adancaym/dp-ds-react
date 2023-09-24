@@ -8,6 +8,7 @@ const Component = <T extends ITypeData = string>({
   label,
   error,
   description,
+  style,
   ...props
 }: InputProps<T>) => {
   const { theme } = useTheme();
@@ -31,7 +32,13 @@ const Component = <T extends ITypeData = string>({
     style: inputStyle.description,
   });
 
-  return createElement(Wrapper, { ...props, style: inputStyle.input });
+  return createElement(
+    Wrapper, 
+    { 
+      ...props, 
+      style: {...inputStyle.input,...style}
+    }
+  );
 };
 
 export default Component;
