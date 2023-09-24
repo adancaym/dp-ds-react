@@ -23,8 +23,8 @@ let Component: ElementType = <T extends ITypeData = string>({ onChange, ...props
   return createElement("input", 
   {
     ...props,
-    role: "input",
-    className: `input input-${props.type} ${props.className}`,
+    role:  props.role ?? "input",
+    className: `input input-${props.type} ${props.className ?? ''}`,
     onChange: _onChange 
   }
   );

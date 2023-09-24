@@ -6,8 +6,8 @@ let Component: FC<ITypography> = ({ as = "p", children, ...props }: ITypography)
   createElement(as,
   {
     ...props,
-    role: 'typography',
-    className: `typography typography-${as} ${props.className}`,
+    role: `${props.role ?? 'typography'}`,
+    className: `typography typography-${as} ${props.className ?? ''}`,
   }, 
   children
 );

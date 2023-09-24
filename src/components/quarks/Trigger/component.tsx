@@ -6,8 +6,8 @@ export const Trigger: React.FC<ITrigger> = ({ children, ...props }) =>
 createElement("button", 
 {
   ...props,
-  role: 'button',
-  className: `trigger ${props.className}`,
+  role: props.role ?? 'button',
+  className: `trigger ${props.className ?? ''}`,
 },
 children);
 

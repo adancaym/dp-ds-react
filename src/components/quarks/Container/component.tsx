@@ -6,8 +6,8 @@ let Component: React.FC<IContainer> = ({ children, ...props }: IContainer) =>
   createElement("div",
   { 
     ...props,
-    role: "container",
-    className: `container ${props.className}`,
+    role:  props.role ?? "container",
+    className: `container ${props.className ?? ''}`,
   },
   children
   );
