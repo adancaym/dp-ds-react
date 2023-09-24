@@ -4,7 +4,8 @@ import {
   IOnChangeArg,
   IOnChangeFunction,
   IReaderProps,
-} from "./types";
+} from "../types";
+
 
 let Component: ElementType = <T extends ITypeData = string>({
   onChange,
@@ -24,7 +25,11 @@ let Component: ElementType = <T extends ITypeData = string>({
     onChange(newValue as T);
   };
 
-  return createElement("input", { ...props, onChange: _onChange });
+  return createElement("input", {
+    ...props,
+    role: 'input',
+    className: props.className === 'input' ? '': props.className,
+    onChange: _onChange });
 };
 
 Component = memo(Component);

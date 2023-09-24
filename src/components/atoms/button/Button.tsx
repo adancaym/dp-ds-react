@@ -7,10 +7,14 @@ import {
   IWithStyle,
   IWithVariantButton,
 } from "src/components";
+
 import { Trigger, withChildrenText, withDescription } from "src/components";
 import { MakeButtonTheme, useTheme } from "src/theme";
+import { IComponent } from "src/types";
 
-type ButtonProps = IWithChildren &
+type ButtonProps =
+  IComponent &
+  IWithChildren &
   IWithVariantButton &
   IWithOnClick &
   IWithDescription &
@@ -25,7 +29,7 @@ let Component: FC<ButtonProps> = ({
   const { theme } = useTheme();
   const { typography, button } = MakeButtonTheme(theme, variant);
 
-  let Component = Trigger;
+  let Component = Trigger as FC<ButtonProps>;
   Component = withDescription<ButtonProps>({ Component, description });
   Component = withChildrenText<ButtonProps>({
     Component,
