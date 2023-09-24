@@ -3,7 +3,7 @@ import { IWithOnChange, IWithStyle } from "src/components/hoc";
 import { IComponent } from "src/types";
 
 export type IReaderProps<T> =
- IComponent &
+  IComponent &
   IWithStyle &
   IWithOnChange<T> & {
     type: HTMLInputTypeAttribute;
