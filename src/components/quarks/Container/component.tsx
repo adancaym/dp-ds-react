@@ -6,6 +6,7 @@ let Component: React.FC<IContainer> = ({ children, ...props }: IContainer) =>
     "div",
     {
       ...props,
+      role: "container",
       className: `container ${
         props.className === "container" ? "" : props.className
       }`,
@@ -14,3 +15,4 @@ let Component: React.FC<IContainer> = ({ children, ...props }: IContainer) =>
   );
 
 export default Component;
+

@@ -1,44 +1,30 @@
-import React from "react";
 import { render, screen } from "@testing-library/react";
 import Container from "./component";
 
 describe("Container component", () => {
   it("renders without crashing", () => {
-    const view = render(<Container />);
-    expect(view).toBeTruthy();
+render(<Container />);
+expect(screen.getByRole("container")).toBeInTheDocument();
+
   });
 
-  it("renders without crashing with children", () => {
-    const view = render(<Container>Test</Container>);
-    expect(view).toBeTruthy();
-  });
-
-  it("renders with default props", () => {
-    const view = render(<Container />);
-    expect(view.container.querySelector(".container")).toBeInTheDocument();
-    expect(view.container.querySelector(".container")).toHaveTextContent("");
-  });
-
-  it("renders children", () => {
+  it("renders with children", () => {
     render(<Container>Test</Container>);
     expect(screen.getByText("Test")).toBeInTheDocument();
   });
 
-  it("renders with additional props", () => {
-    const view = render(
-      <Container id="test" className="container">
-        Test
-      </Container>
-    );
+  it("renders with id", () => {
+    render(<Container id="test" />);
+    expect(screen.getByRole("container")).toHaveAttribute("id", "test");
+  });
 
-    expect(view.container.querySelector(".container")).toBeInTheDocument();
-    expect(view.container.querySelector("#test")).toBeInTheDocument();
-    expect(view.container.querySelector(".container")).toHaveTextContent(
-      "Test"
-    );
-    expect(view.container.querySelector(".container")).toHaveAttribute(
-      "id",
-      "test"
-    );
+  it("renders with className", () => {
+    render(<Container className="test" />);
+    expect(screen.getByRole("container")).toHaveClass("test");
+  });
+
+  it("renders with other props", () => {
+    render(<Container data-testid="test" />);
+    expect(screen.getByTestId("test")).toBeInTheDocument();
   });
 });
