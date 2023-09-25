@@ -1,22 +1,17 @@
-import { ElementType, memo, createElement } from "react";
-import {
-  ITypeData,
-  IOnChangeArg,
-  IOnChangeFunction,
-  IReaderProps,
-} from "../types";
+import { createElement, ElementType, memo } from 'react';
+
+import { IOnChangeArg, IOnChangeFunction, ITypeData } from '../types';
+import { IReaderProps } from './type';
 
 
-let Component: ElementType = <T extends ITypeData = string>({
-  onChange,
-  ...props
-}: IReaderProps<T>) => {
+
+
+let Component: ElementType = <T extends ITypeData = string>({ onChange, ...props}: IReaderProps<T>) => {
+
   const _onChange: IOnChangeFunction = (e: IOnChangeArg) => {
     if (!onChange) return;
 
-    const {
-      target: { value },
-    } = e;
+    const { target: { value }  } = e;
 
     let newValue: ITypeData = value;
 
@@ -25,11 +20,15 @@ let Component: ElementType = <T extends ITypeData = string>({
     onChange(newValue as T);
   };
 
-  return createElement("input", {
+  return createElement("input", 
+  {
     ...props,
-    role: 'input',
-    className: props.className === 'input' ? '': props.className,
-    onChange: _onChange });
+    type: props.type ?? "text",
+    role:  props.role ?? "input",
+    className: `input input-${props.type ?? 'text'} ${props.className ?? ''}`,
+    onChange: _onChange 
+  }
+  );
 };
 
 Component = memo(Component);

@@ -1,11 +1,11 @@
-import { render, screen } from "@testing-library/react";
-import Container from "./component";
+import { render, screen } from '@testing-library/react';
+
+import Container from './component';
 
 describe("Container component", () => {
   it("renders without crashing", () => {
-render(<Container />);
-expect(screen.getByRole("container")).toBeInTheDocument();
-
+    render(<Container />);
+    expect(screen.getByRole("container")).toBeInTheDocument();
   });
 
   it("renders with children", () => {
