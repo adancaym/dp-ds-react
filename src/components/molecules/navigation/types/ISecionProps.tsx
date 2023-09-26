@@ -1,9 +1,11 @@
-import { CSSProperties } from "react";
-import { IPositionVariant } from "./IPositionVariant";
-import { INavigationItem } from "./INavigationItem";
+import { CSSProperties } from 'react';
+import { IComponent } from 'src/types';
 
-export interface ISecionProps {
-  children: INavigationItem[];
+import { INavigationItem } from './INavigationItem';
+import { IPositionVariant } from './IPositionVariant';
+
+export interface ISecionProps extends IComponent{
+  children?: INavigationItem[];
   styles?: CSSProperties;
   linkStyle?: CSSProperties;
   position?: IPositionVariant;

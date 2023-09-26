@@ -1,8 +1,8 @@
-import { Container } from "..";
-import { IComponent } from "../../types";
-import { Navigation } from "../molecules/navigation/Navigation";
-import { NavigationItem } from "../molecules/navigation/components/NavigationItem";
-import { IWithNavigation } from "./types";
+import { Container, Navigation, NavigationItem } from 'src/components';
+import { IComponent } from 'src/types';
+
+import { IWithNavigation } from './types';
+
 
 export const withNavigation =
   <T extends IComponent>({ Component, routes }: IWithNavigation<T>) =>

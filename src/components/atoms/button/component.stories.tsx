@@ -3,7 +3,6 @@ import { Button } from 'src/components';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
-  title: 'DS/Button',
   component: Button,
   parameters: { layout: 'centered' },
   tags: ['autodocs'],

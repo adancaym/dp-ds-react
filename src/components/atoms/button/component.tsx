@@ -32,7 +32,6 @@ let Button: FC<ButtonProps> = (props) => {
   const newprops = { 
     ...props,
     className: `button ${props.className ?? ''} ${variant} button-${variant}`,
-    displayName: 'Button',
   }
 
   
@@ -40,7 +39,6 @@ let Button: FC<ButtonProps> = (props) => {
     Component,
     newprops
   );
-  
 };
 
 Button = memo(Button);

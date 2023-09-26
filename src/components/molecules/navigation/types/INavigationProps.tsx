@@ -1,7 +1,9 @@
-import { RouteObject } from "react-router-dom";
-import { INavigationItem } from "./INavigationItem";
+import { RouteObject } from 'react-router-dom';
+import { IComponent } from 'src/types';
 
-export interface INavigationProps {
-  children: INavigationItem[];
+import { INavigationItem } from './INavigationItem';
+
+export interface INavigationProps extends IComponent{
+  children?: INavigationItem[];
   router: RouteObject[];
 }
