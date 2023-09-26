@@ -2,7 +2,7 @@ import { createElement, memo } from 'react';
 
 import { ITrigger } from './type';
 
-export const Trigger: React.FC<ITrigger> = ({ children, ...props }) => 
+let Trigger: React.FC<ITrigger> = ({ children, ...props }) => 
 createElement("button", 
 {
   ...props,
@@ -11,8 +11,7 @@ createElement("button",
 },
 children);
 
-let Component = Trigger
 
-Component = memo(Component);
+Trigger = memo(Trigger);
 
-export default Component;
+export default Trigger;

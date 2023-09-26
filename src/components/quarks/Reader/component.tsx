@@ -3,10 +3,7 @@ import { IOnChangeArg, IOnChangeFunction, ITypeDataInput } from 'src/types';
 
 import { IReaderProps } from './type';
 
-
-
-
-let Component: ElementType = <T extends ITypeDataInput = string>({ onChange, ...props}: IReaderProps<T>) => {
+let Reader: ElementType = <T extends ITypeDataInput = string>({ onChange, ...props}: IReaderProps<T>) => {
 
   const _onChange: IOnChangeFunction = (e: IOnChangeArg) => {
     if (!onChange) return;
@@ -31,6 +28,6 @@ let Component: ElementType = <T extends ITypeDataInput = string>({ onChange, ...
   );
 };
 
-Component = memo(Component);
+Reader = memo(Reader);
 
-export default Component;
+export default Reader;

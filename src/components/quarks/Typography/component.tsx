@@ -2,7 +2,7 @@ import { createElement, FC, memo } from 'react';
 
 import { ITypography } from './type';
 
-let Component: FC<ITypography> = ({ as = "p", children, ...props }: ITypography) =>
+let Typography: FC<ITypography> = ({ as = "p", children, ...props }: ITypography) =>
   createElement(as,
   {
     ...props,
@@ -12,6 +12,6 @@ let Component: FC<ITypography> = ({ as = "p", children, ...props }: ITypography)
   children
 );
 
-Component = memo(Component);
+Typography = memo(Typography);
 
-export default Component;
+export default Typography;
