@@ -23,4 +23,17 @@ describe('Typography', () => {
     render(<Typography data-testid="test-id">Hello World</Typography>);
     expect(screen.getByTestId('test-id')).toBeInTheDocument();
   });
+
+  it('renders the correct role', () => {
+    render(<Typography>Hello World</Typography>);
+    expect(screen.getByText('Hello World')).toHaveAttribute('role', 'typography');
+  });
+
+  it('renders the correct role when passed', () => {
+    render(<Typography role="test-role">Hello World</Typography>);
+    expect(screen.getByText('Hello World')).toHaveAttribute('role', 'test-role');
+  });
+
+  
+
 });
