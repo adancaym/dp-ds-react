@@ -1,4 +1,4 @@
-import { IBorderRadius } from "../types/IBorderRadius";
+import { IBorderRadius } from '../types/IBorderRadius';
 
 export const borderRadius: IBorderRadius = {
   small: "0.25rem",
