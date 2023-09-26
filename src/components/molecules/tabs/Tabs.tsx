@@ -1,8 +1,9 @@
-import { createContext, useState, FC } from "react";
-import { Container, Typography } from "src/components";
-import { useTheme } from "src/theme";
-import { MakeTabsTheme } from "src/theme/components";
-import { ITabContextProps, ITabProps, ITabsProps } from "./types";
+import { createContext, FC, useState } from 'react';
+import { Container, Typography } from 'src/components';
+import { useTheme } from 'src/theme';
+import { MakeTabsTheme } from 'src/theme/components';
+
+import { ITabContextProps, ITabProps, ITabsProps } from './types';
 
 export const TabContext = createContext<ITabContextProps>({
   tabs: [],
@@ -22,7 +23,7 @@ export const Tabs: FC<ITabsProps> = ({ children }) => {
 
   const addTab = (tab: ITabProps) => {
     if (!tabs.map(({ name }) => name).includes(tab.name)) {
-      setTabs([...tabs, tab]);
+      setTabs([tab, ...tabs]);
     }
   };
 
@@ -30,6 +31,8 @@ export const Tabs: FC<ITabsProps> = ({ children }) => {
     <Container style={toolbar}>
       {tabs.map(({ label, name }) => (
         <Typography
+          role='tab-label'
+          data-testid={`tab-${name}`}
           key={name}
           onClick={() => setCurrentTab(name)}
           style={currentTab === name ? tabActive : tab}
@@ -42,7 +45,7 @@ export const Tabs: FC<ITabsProps> = ({ children }) => {
   return (
     <Provider value={{ tabs, addTab, currentTab, setCurrentTab }}>
       <Tabs />
-      <Container style={content} children={children} />
+      <Container role='tab-container' style={content} children={children} />
     </Provider>
   );
 };

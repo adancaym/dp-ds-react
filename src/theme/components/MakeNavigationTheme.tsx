@@ -1,5 +1,6 @@
-import { IPalette } from "..";
-import { IMakeNavigationTheme } from "src/theme/types";
+import { IMakeNavigationTheme } from 'src/theme/types';
+
+import { IPalette } from '..';
 
 export const MakeNavigationTheme = (
   pallete: IPalette
@@ -23,5 +24,6 @@ export const MakeNavigationTheme = (
   link: {
     textDecoration: "none",
     color: "inherit",
+    margin: "1rem 1rem",
   },
 });

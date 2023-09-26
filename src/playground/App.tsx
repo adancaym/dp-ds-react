@@ -1,5 +1,5 @@
-import { Container, Typography, withNavigation } from "src/components";
-import {createContext, ReactNode, useContext, useState} from "react";
+import { createContext, ReactNode, useContext, useState } from 'react';
+import { Container, Typography, withNavigation } from 'src/components';
 
 export interface SidebarContextProps {
   open: boolean
@@ -40,7 +40,7 @@ export default withNavigation({
   Component,
   routes: [
     {
-      path: "/",
+      path: "/",  
       label: "Home",
       position: "left",
     },
