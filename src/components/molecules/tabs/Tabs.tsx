@@ -14,7 +14,7 @@ export const TabContext = createContext<ITabContextProps>({
 
 const { Provider } = TabContext;
 
-export const Tabs: FC<ITabsProps> = ({ children }) => {
+const Tabs: FC<ITabsProps> = ({ children }) => {
   const { theme } = useTheme();
   const { toolbar, tab, tabActive, content } = MakeTabsTheme(theme);
 
@@ -49,3 +49,5 @@ export const Tabs: FC<ITabsProps> = ({ children }) => {
     </Provider>
   );
 };
+
+export default Tabs;
