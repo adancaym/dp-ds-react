@@ -5,6 +5,7 @@ import Input from './component';
 
 export default {
   component: Input,
+  tags: ['autodocs'],
   argTypes: {
     onChange: { action: 'changed' },
   },
