@@ -1,19 +1,26 @@
 import { createElement, FC, memo } from 'react';
-import { Trigger, withChildrenText, withDescription } from 'src/components';
+import { Trigger, withChildrenText, withDescription, withStyle } from 'src/components';
 import { MakeButtonTheme, useTheme } from 'src/theme';
 
 import { ButtonProps } from './type';
 
-let Component: FC<ButtonProps> = ({ variant, children, description, ...props }) => {
+let Button: FC<ButtonProps> = (props) => {
   
+  const { variant = 'primary' , children, description } = props 
+
   const { theme } = useTheme();
-  const { typography, button } = MakeButtonTheme(theme, variant);
+  const { typography, button } = MakeButtonTheme(theme, props);
 
   let Component = Trigger;
+
+  Component = withStyle({
+    Component,
+    style: button
+  })
   
   Component = withDescription<ButtonProps>({ 
     Component, 
-    description 
+    description,
   });
   
   Component = withChildrenText<ButtonProps>({
@@ -22,16 +29,20 @@ let Component: FC<ButtonProps> = ({ variant, children, description, ...props }) 
     style: typography,
   });
 
+  const newprops = { 
+    ...props,
+    className: `button ${props.className ?? ''} ${variant} button-${variant}`,
+    displayName: 'Button',
+  }
+
+  
   return createElement(
     Component,
-    { 
-      ...props,
-      className: props.className ? `button ${props.className} ${variant} button-${variant}` : `button ${variant} button-${variant}`,
-      style: button 
-    }
+    newprops
   );
+  
 };
 
-Component = memo(Component);
+Button = memo(Button);
 
-export default Component;
+export default Button;

@@ -1,19 +1,19 @@
 import { createElement, ElementType, memo } from 'react';
+import { IOnChangeArg, IOnChangeFunction, ITypeDataInput } from 'src/types';
 
-import { IOnChangeArg, IOnChangeFunction, ITypeData } from '../types';
 import { IReaderProps } from './type';
 
 
 
 
-let Component: ElementType = <T extends ITypeData = string>({ onChange, ...props}: IReaderProps<T>) => {
+let Component: ElementType = <T extends ITypeDataInput = string>({ onChange, ...props}: IReaderProps<T>) => {
 
   const _onChange: IOnChangeFunction = (e: IOnChangeArg) => {
     if (!onChange) return;
 
     const { target: { value }  } = e;
 
-    let newValue: ITypeData = value;
+    let newValue: ITypeDataInput = value;
 
     if (newValue === null) newValue = undefined;
 

@@ -1,30 +1,29 @@
-import { IPalette, IVariantButton } from "src/theme";
+import { ButtonProps } from 'src/components/atoms/button/type';
+import { IPalette } from 'src/theme';
 
-import {
-  space,
-  lineHeights,
-  fontWeights,
-  fonts,
-  borderRadius,
-} from "../constants";
+import { borderRadius, fonts, fontWeights, lineHeights, sizes, space } from '../constants';
 
 export const MakeButtonTheme = (
   pallete: IPalette,
-  variant: IVariantButton = "primary"
+  { variant = "primary", size = 'full', style}: ButtonProps
 ) => ({
   button: {
+    width: sizes[size],
     outline: "none",
     backgroundColor: pallete[variant].main,
     color: pallete.text.main,
     fontFamily: fonts.body,
-    fontSize: "1rem",
     fontWeight: fontWeights.normal,
     lineHeight: lineHeights.small,
     borderRadius: borderRadius.small,
     borderColor: pallete[variant].main,
-    width: "100%",
+    margin: `${space.small} ${space.medium}`,
+    ...style
   },
   typography: {
-    padding: `${space.small} ${space.medium}`,
+    color: pallete.text.main,
+    fontFamily: fonts.body,
+    fontWeight: fontWeights.normal,
+    lineHeight: lineHeights.small,
   },
 });

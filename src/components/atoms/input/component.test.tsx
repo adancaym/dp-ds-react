@@ -1,6 +1,5 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import React from 'react';
 
 import Component from './component';
 
@@ -57,9 +56,11 @@ describe('Input Component', () => {
         expect(input).toHaveClass('test');
     });
 
+    
     it('renders the input with the correct style', () => {
         render(<Component style={{ color: 'red' }} />);
         const input = screen.getByRole('input');
         expect(input).toHaveStyle({ color: 'red' });
     });
 });
+

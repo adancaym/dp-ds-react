@@ -1,10 +1,11 @@
 import { createElement, FC } from 'react';
-import { IReaderProps, ITypeData, Reader, withDescription, withError, withLabel } from 'src/components';
+import { Reader, withDescription, withError, withLabel, withStyle } from 'src/components';
 import { MakeInputTheme, useTheme } from 'src/theme';
+import { ITypeDataInput } from 'src/types';
 
 import { InputProps } from './type';
 
-const Component = <T extends ITypeData = string>({
+const Input = <T extends ITypeDataInput = string>({
   label,
   error,
   description,
@@ -14,8 +15,13 @@ const Component = <T extends ITypeData = string>({
   const { theme } = useTheme();
   const inputStyle = MakeInputTheme(theme);
 
-  let Wrapper = Reader as FC<IReaderProps<T>>;
-
+  let Wrapper = Reader as FC<InputProps<T>>;
+  
+  Wrapper = withStyle({
+    Component: Wrapper,
+    style
+  })
+  
   Wrapper = withLabel<InputProps<T>>({
     Component: Wrapper,
     label,
@@ -34,11 +40,8 @@ const Component = <T extends ITypeData = string>({
 
   return createElement(
     Wrapper, 
-    { 
-      ...props, 
-      style: {...inputStyle.input,...style}
-    }
+    props
   );
 };
 
-export default Component;
+export default Input;

@@ -5,4 +5,5 @@ export * from './fonts';
 export * from './light';
 export * from './lineHeights';
 export * from './modes';
+export * from './sizes';
 export * from './space';
