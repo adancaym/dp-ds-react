@@ -1,5 +1,5 @@
 import { Meta, Story } from '@storybook/react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 import Input from './component';
 
@@ -14,8 +14,8 @@ export default {
 const Template: Story = (args) => {
   const [value, setValue] = useState('');
 
-  const handleChange = (event: string) => {
-    setValue(event);
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setValue(event.target.value);
     args.onChange?.(event);
   };
 

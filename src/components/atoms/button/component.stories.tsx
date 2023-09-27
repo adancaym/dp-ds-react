@@ -5,7 +5,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 const meta = {
   component: Button,
   parameters: { layout: 'centered' },
-  tags: ['autodocs'],
+  tags: ['autodoc'],
   argTypes: {
     color: {
       control: {
@@ -27,6 +27,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
+    type: 'button',
     color: 'primary',
     children: 'Button'
   },
@@ -34,6 +35,7 @@ export const Primary: Story = {
 
 export const Secondary: Story = {
   args: {
+    type: 'button',
     color: 'secondary',
     children: 'Button'
   }
@@ -41,6 +43,7 @@ export const Secondary: Story = {
 
 export const Large: Story = {
   args: {
+    type: 'button',
     size: 'large',
     children: 'Button'
   },
@@ -48,6 +51,7 @@ export const Large: Story = {
 
 export const Small: Story = {
   args: {
+    type: 'button',
     size: 'small',
     children: 'Button'
   },

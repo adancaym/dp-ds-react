@@ -7,5 +7,5 @@ export type ButtonProps = IComponent &
   IWithColortButton &
   IWithDescription &
   IWithStyle & {
-    type?: HTMLButtonElement["type"];
+    type?: "submit" | "reset" | "button"
   };

@@ -6,7 +6,7 @@ import { ButtonProps } from './type';
 
 let Button: FC<ButtonProps> = (props) => {
   
-  const { color: variant = 'primary' , children, description } = props 
+  const { color: variant = 'primary' , children, description, type = `button` } = props 
 
   const { theme } = useTheme();
   const buttonStyle = MakeButtonTheme(theme, props);
@@ -34,7 +34,7 @@ let Button: FC<ButtonProps> = (props) => {
     className: `${props.className ?? ''} ${variant} button-${variant}`,
   }
 
-  return <TriggerButton {...newprops} />;
+  return <TriggerButton type={type} {...newprops} />;
 };
 
 Button = memo(Button);

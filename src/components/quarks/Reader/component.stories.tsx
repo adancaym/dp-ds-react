@@ -8,14 +8,14 @@ export default {
   component: Reader,
   tags: ['autodocs'],
 };
-const Template: Story<IReaderProps<string>> = (args) => {
+const Template: Story<IReaderProps> = (args) => {
   const [value, setValue] = useState(args.value);
 
   return (
     <Reader
       {...args}
       value={value}
-      onChange={(newValue: string) => setValue(newValue)}
+      onChange={(newValue) => setValue(newValue.target.value)}
     />
   );
 };
