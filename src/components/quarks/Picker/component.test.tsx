@@ -1,29 +1,34 @@
-import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+import React from 'react';
+import { render, fireEvent, screen } from '@testing-library/react';
 import Picker from './component';
 
-describe('Picker', () => {
-  const options = [
-    { value: '1', label: 'Option 1' },
-    { value: '2', label: 'Option 2' },
-    { value: '3', label: 'Option 3' },
-  ];
+const options = [
+  { label: 'Option 1', value: 'option1' },
+  { label: 'Option 2', value: 'option2' },
+  { label: 'Option 3', value: 'option3' },
+];
 
-  it('renders the options correctly', () => {
-    render(<Picker>{options.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}</Picker>);
-    const option1 = screen.getByText('Option 1');
-    const option2 = screen.getByText('Option 2');
-    const option3 = screen.getByText('Option 3');
-    expect(option1).toBeInTheDocument();
-    expect(option2).toBeInTheDocument();
-    expect(option3).toBeInTheDocument();
+describe('Picker', () => {
+  it('renders options correctly', () => {
+    render(<Picker options={options} />);
+    const selectElement = screen.getByRole('picker');
+    expect(selectElement).toBeInTheDocument();
+    expect(selectElement).toHaveClass('picker');
+    expect(selectElement).toHaveAttribute('role', 'picker');
+
+    options.forEach((option) => {
+      const optionElement = screen.getByRole('option', { name: option.label });
+      expect(optionElement).toBeInTheDocument();
+      expect(optionElement).toHaveAttribute('value', option.value);
+    });
   });
 
   it('calls onChange when an option is selected', () => {
     const onChange = jest.fn();
-    render(<Picker onChange={onChange}>{options.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}</Picker>);
-    userEvent.selectOptions(screen.getByRole('picker'), '2');
+    render(<Picker options={options} onChange={ e => onChange(e.target.value)} />);
+    const selectElement = screen.getByRole('picker');
+    fireEvent.change(selectElement, { target: { value: 'option2' } });
     expect(onChange).toHaveBeenCalledTimes(1);
-    expect(onChange).toHaveBeenCalledWith(expect.objectContaining({ target: expect.objectContaining({ value: '2' }) }));
+    expect(onChange).toHaveBeenCalledWith('option2');
   });
 });

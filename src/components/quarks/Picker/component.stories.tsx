@@ -15,9 +15,9 @@ export const Default = Template.bind({});
 
 
 Default.args = {
-    children: [
-        <option key="1" value="option1">Option 1</option>,
-        <option key="2" value="option2">Option 2</option>,
-        <option key="3" value="option3">Option 3</option>,
+    options: [
+        { value: '1', label: '1' },
+        { value: '2', label: '2' },
+        { value: '3', label: '3' },
     ],
 };
