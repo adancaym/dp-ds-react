@@ -1,7 +1,7 @@
 import { Meta, Story } from '@storybook/react';
 import React from 'react';
 
-import Container from './component';
+import Container from './Container';
 import { IContainer } from './type';
 
 export default {

@@ -1,7 +1,7 @@
 import { Meta, Story } from '@storybook/react';
 import React from 'react';
 
-import Trigger from './component';
+import Trigger from './Trigger';
 
 
 export default {

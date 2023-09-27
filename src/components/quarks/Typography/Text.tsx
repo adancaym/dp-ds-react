@@ -1,8 +1,8 @@
 import { createElement, FC, memo } from 'react';
 
-import { ITypography } from './type';
+import { IText } from './type';
 
-let Typography: FC<ITypography> = ({ as = "p", children, ...props }: ITypography) =>
+let Text: FC<IText> = ({ as = "p", children, ...props }: IText) =>
   createElement(as,
   {
     ...props,
@@ -12,6 +12,6 @@ let Typography: FC<ITypography> = ({ as = "p", children, ...props }: ITypography
   children
 );
 
-Typography = memo(Typography);
+Text = memo(Text);
 
-export default Typography;
+export default Text;

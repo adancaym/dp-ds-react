@@ -1,2 +1,2 @@
-export {default as Picker } from './component';
+export {default as Picker } from './Picker';
 export * from './type';

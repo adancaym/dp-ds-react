@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
-import Picker from './component';
+import Picker from './Picker';
 
 const options = [
   { label: 'Option 1', value: 'option1' },

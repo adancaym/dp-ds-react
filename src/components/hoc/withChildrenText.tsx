@@ -1,4 +1,4 @@
-import { IWith, IWithChildren, IWithStyle, Typography, withStyle } from 'src/components';
+import { IWith, IWithChildren, IWithStyle, Text, withStyle } from 'src/components';
 import { IComponent } from 'src/types';
 
 interface IWithChildrenTextProps<T>
@@ -8,7 +8,7 @@ interface IWithChildrenTextProps<T>
 
 export const withChildrenText = <T extends IComponent>({ Component, children,  style }: IWithChildrenTextProps<T>) => (props: T) => {
 
-  const TextChildren = withStyle({ Component: Typography, style });
+  const TextChildren = withStyle({ Component: Text, style });
   
   return (
     <Component {...props}> 

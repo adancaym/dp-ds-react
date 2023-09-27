@@ -1,5 +1,5 @@
 import { createContext, ReactNode, useContext, useState } from 'react';
-import { Container, Typography, withNavigation } from 'src/components';
+import { Container, Text, withNavigation } from 'src/components';
 
 export interface SidebarContextProps {
   open: boolean
@@ -31,7 +31,7 @@ export const Sidebar = ({children}: SidebarProps) => {
 const Component = () => (
   <>
     <Container>
-      <Typography>Github</Typography>
+      <Text>Github</Text>
     </Container>
   </>
 );

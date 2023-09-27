@@ -1,5 +1,5 @@
 import { createContext, FC, useState } from 'react';
-import { Container, Typography } from 'src/components';
+import { Container, Text } from 'src/components';
 import { useTheme } from 'src/theme';
 import { MakeTabsTheme } from 'src/theme/components';
 
@@ -29,9 +29,9 @@ const Tabs: FC<ITabsProps> = ({ children }) => {
     <Container style={toolbar}>
       {tabs.map(({ label, name }) => (
         <Container onClick={() => setCurrentTab(name)} key={name} style={currentTab === name ? tabActive : tab} >
-          <Typography as='label' role='tab-label' data-testid={`tab-${name}`} >
+          <Text as='label' role='tab-label' data-testid={`tab-${name}`} >
             {label}
-          </Typography>
+          </Text>
         </Container>
       ))}
     </Container>

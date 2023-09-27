@@ -1,2 +1,2 @@
-export { default as Container } from './component';
+export { default as Container } from './Container';
 export * from './type';

@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 
-import Trigger from './component';
+import Trigger from './Trigger';
 
 describe('Trigger', () => {
   it('renders children', () => {

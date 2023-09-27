@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import Component from './component';
+import Component from './Input';
 
 describe('Input Component', () => {
   it('renders the input with the correct label', () => {

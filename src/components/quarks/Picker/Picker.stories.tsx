@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import Picker from './component';
+import Picker from './Picker';
 import { IPicker } from './type';
 
 export default {

@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 
-import Reader from './component';
+import Reader from './Reader';
 
 describe("Reader component", () => {
   it("should call onChange function when input value changes", () => {

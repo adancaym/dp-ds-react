@@ -1,7 +1,7 @@
 import { Meta, Story } from '@storybook/react';
 import React, { useState } from 'react';
 
-import Input from './component';
+import Input from './Input';
 
 export default {
   component: Input,

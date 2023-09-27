@@ -1,1 +1,1 @@
-export { default as Typography } from './component';
+export { default as Text } from './Text';

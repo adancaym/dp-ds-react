@@ -1,12 +1,12 @@
 import { Meta, Story } from '@storybook/react';
 import React from 'react';
 
-import Typography from './component';
-import { ITypography } from './type';
+import Text from './Text';
+import { IText } from './type';
 
 export default {
     tags: ['autodocs'],
-  component: Typography,
+  component: Text,
   argTypes: {
     as: {
       control: {
@@ -32,7 +32,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<ITypography> = (args) => <Typography {...args} />;
+const Template: Story<IText> = (args) => <Text {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

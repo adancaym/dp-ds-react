@@ -1,7 +1,7 @@
 import { Story } from '@storybook/react';
 import { useState } from 'react';
 
-import Reader from './component';
+import Reader from './Reader';
 import { IReaderProps } from './type';
 
 export default {
