@@ -4,7 +4,7 @@ import { Container } from 'src/components';
 import { useTabs } from '../hooks';
 import { ITabProps } from '../types';
 
-export const Tab = (tab: ITabProps) => {
+const Tab = (tab: ITabProps) => {
   const { children, name } = tab;
   const { addTab, currentTab, tabs } = useTabs();
 
@@ -24,3 +24,6 @@ export const Tab = (tab: ITabProps) => {
   children={children} 
   /> : null;
 };
+
+
+export default Tab;
