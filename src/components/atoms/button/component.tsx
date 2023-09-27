@@ -9,24 +9,24 @@ let Button: FC<ButtonProps> = (props) => {
   const { color: variant = 'primary' , children, description } = props 
 
   const { theme } = useTheme();
-  const { typography, button } = MakeButtonTheme(theme, props);
+  const buttonStyle = MakeButtonTheme(theme, props);
 
   let TriggerButton = Trigger
 
   TriggerButton = withStyle({
     Component: TriggerButton,
-    style: button
+    style: buttonStyle.button
   })
   
-  TriggerButton = withDescription({ 
+  if(description) TriggerButton = withDescription({ 
     Component: TriggerButton,
     description,
   });
   
-  TriggerButton = withChildrenText({
+  if(children) TriggerButton = withChildrenText({
     Component: TriggerButton,
     children,
-    style: typography,
+    style: buttonStyle.typography,
   });
 
   const newprops = { 

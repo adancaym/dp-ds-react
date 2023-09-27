@@ -1,38 +1,39 @@
 import { FC } from 'react';
 import { Reader, withDescription, withError, withLabel, withStyle } from 'src/components';
 import { MakeInputTheme, useTheme } from 'src/theme';
-import { ITypeDataInput } from 'src/types';
 
 import { InputProps } from './type';
 
-const Input = <T extends ITypeDataInput = string>({ label, error, description, style, ...props}: InputProps<T>) => {
+const Input : FC<InputProps> = ({ label, error, description, style, ...props}: InputProps) => {
   const { theme } = useTheme();
   const inputStyle = MakeInputTheme(theme);
 
-  let Wrapper = Reader;
+  let ReaderInput = Reader;
   
-  Wrapper = withStyle({
-    Component: Wrapper,
+  if(style) ReaderInput = withStyle({
+    Component: ReaderInput,
     style
   });
   
-  Wrapper = withLabel<InputProps<T>>({
-    Component: Wrapper,
+  if(label) ReaderInput = withLabel({
+    Component: ReaderInput,
     label,
     style: inputStyle.label,
   });
-  Wrapper = withError<InputProps<T>>({
-    Component: Wrapper,
+  
+  if(error) ReaderInput = withError({
+    Component: ReaderInput,
     error,
     style: inputStyle.error,
   });
-  Wrapper = withDescription<InputProps<T>>({
-    Component: Wrapper,
+
+  if(description) ReaderInput = withDescription({
+    Component: ReaderInput,
     description,
     style: inputStyle.description,
   });
 
-  return <Wrapper {...props} />;
+  return <ReaderInput {...props} />;
 };
 
 export default Input;
