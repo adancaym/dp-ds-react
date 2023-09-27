@@ -23,12 +23,12 @@ describe('Picker', () => {
     });
   });
 
-  it('calls onChange when an option is selected', () => {
+it('calls onChange when an option is selected', () => {
     const onChange = jest.fn();
-    render(<Picker options={options} onChange={ e => onChange(e.target.value)} />);
+    render(<Picker options={options} onChange={ (e: React.ChangeEvent<HTMLSelectElement>) => onChange(e.target.value)} />);
     const selectElement = screen.getByRole('picker');
     fireEvent.change(selectElement, { target: { value: 'option2' } });
     expect(onChange).toHaveBeenCalledTimes(1);
     expect(onChange).toHaveBeenCalledWith('option2');
-  });
+});
 });
