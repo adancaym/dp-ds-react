@@ -7,7 +7,7 @@ const meta = {
   parameters: { layout: 'centered' },
   tags: ['autodocs'],
   argTypes: {
-    variant: {
+    color: {
       control: {
         type: 'select',
         options: ['primary', 'secondary',  "warning", "danger", "success", "info" ],
@@ -27,14 +27,14 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    variant: 'primary',
+    color: 'primary',
     children: 'Button'
   },
 };
 
 export const Secondary: Story = {
   args: {
-    variant: 'secondary',
+    color: 'secondary',
     children: 'Button'
   }
 };

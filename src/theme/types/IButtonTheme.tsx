@@ -1,5 +1,6 @@
-import { CSSProperties } from "react";
-import { IVariantButton } from "./IVariantButton";
+import { CSSProperties } from 'react';
+
+import { IColorVariantButton } from './IVariantButton';
 
 /**
  * Defines the interface for the Button Theme.
@@ -10,5 +11,5 @@ export interface IButtonTheme extends CSSProperties {
    * Defines the variant property for the Button Theme.
    * It is of type IVariantButton.
    */
-  variant: IVariantButton;
+  variant: IColorVariantButton;
 }

@@ -5,7 +5,7 @@ import { borderRadius, fonts, fontWeights, lineHeights, sizes, space } from '../
 
 export const MakeButtonTheme = (
   pallete: IPalette,
-  { variant = "primary", size = 'full', style}: ButtonProps
+  { color: variant = "primary", size = 'full', style}: ButtonProps
 ) => ({
   button: {
     width: sizes[size],

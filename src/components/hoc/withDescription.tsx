@@ -9,6 +9,6 @@ export const withDescription = <T extends IComponent>({ Component, description, 
 
     return <>
       <Component {...props} />
-      <Description className='description'>{description}</Description>
+      {description && <Description className='description'>{description}</Description>}
     </>
   }

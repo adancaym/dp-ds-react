@@ -18,33 +18,28 @@ const Tabs: FC<ITabsProps> = ({ children }) => {
   const { theme } = useTheme();
   const { toolbar, tab, tabActive, content } = MakeTabsTheme(theme);
 
-  const [tabs, setTabs] = useState<ITabProps[]>([]);
-  const [currentTab, setCurrentTab] = useState<string | undefined>(undefined);
+  const [ tabs, setTabs ] = useState<ITabProps[]>([]);
+  const [ currentTab, setCurrentTab ] = useState<string | undefined>(undefined);
 
   const addTab = (tab: ITabProps) => {
-    if (!tabs.map(({ name }) => name).includes(tab.name)) {
-      setTabs([tab, ...tabs]);
-    }
+    if (!tabs.map(({ name }) => name).includes(tab.name)) setTabs([tab, ...tabs]);
   };
 
-  const Tabs = () => (
+  const TabsLabels = () => (
     <Container style={toolbar}>
       {tabs.map(({ label, name }) => (
-        <Typography
-          role='tab-label'
-          data-testid={`tab-${name}`}
-          key={name}
-          onClick={() => setCurrentTab(name)}
-          style={currentTab === name ? tabActive : tab}
-          children={label}
-        />
+        <Container onClick={() => setCurrentTab(name)} key={name} style={currentTab === name ? tabActive : tab} >
+          <Typography as='label' role='tab-label' data-testid={`tab-${name}`} >
+            {label}
+          </Typography>
+        </Container>
       ))}
     </Container>
   );
 
   return (
     <Provider value={{ tabs, addTab, currentTab, setCurrentTab }}>
-      <Tabs />
+      <TabsLabels />
       <Container role='tab-container' style={content} children={children} />
     </Provider>
   );

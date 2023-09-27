@@ -6,7 +6,7 @@ import { ButtonProps } from './type';
 
 let Button: FC<ButtonProps> = (props) => {
   
-  const { variant = 'primary' , children, description } = props 
+  const { color: variant = 'primary' , children, description } = props 
 
   const { theme } = useTheme();
   const { typography, button } = MakeButtonTheme(theme, props);

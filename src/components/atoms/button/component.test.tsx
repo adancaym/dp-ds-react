@@ -46,14 +46,14 @@ describe("Button", () => {
 
   it("renders button with variant primary", () => {
     const buttonText = "Click me";
-    render(<Button variant="primary">{buttonText}</Button>);
+    render(<Button color="primary">{buttonText}</Button>);
     const element = screen.getByRole("button");
     expect(element).toHaveClass("primary");
   });
 
   it("renders button with variant secondary", () => {
     const buttonText = "Click me";
-    render(<Button variant="secondary">{buttonText}</Button>);
+    render(<Button color="secondary">{buttonText}</Button>);
     const element = screen.getByRole("button");
     expect(element).toHaveClass("secondary");
   });

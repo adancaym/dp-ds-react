@@ -1,5 +1,5 @@
-import { IVariantButton } from "src/theme";
+import { IColorVariantButton } from 'src/theme';
 
-export interface IWithVariantButton {
-  variant?: IVariantButton;
+export interface IWithColortButton {
+  color?: IColorVariantButton;
 }
