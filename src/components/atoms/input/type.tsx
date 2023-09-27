@@ -2,7 +2,7 @@ import { IReaderProps, IWithDescription, IWithError, IWithLabel, IWithPlaceholde
 import { IComponent } from 'src/types';
 
 
-export type InputProps = 
+export type IInput = 
   IReaderProps &
   IComponent &
   IWithPlaceholder &

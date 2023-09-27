@@ -1,7 +1,8 @@
-import { IInputTheme, IPalette } from "src/theme/types";
+import { IPalette } from "src/theme/types";
 import { lineHeights, fontWeights, fonts, borderRadius } from "../constants";
+import { ISelectTheme } from "../types/ISelectTheme";
 
-export const MakeInputTheme: (_: IPalette) => IInputTheme = (
+export const MakeSelectTheme: (_: IPalette) => ISelectTheme = (
   pallete: IPalette
 ) => ({
   label: {
@@ -11,14 +12,14 @@ export const MakeInputTheme: (_: IPalette) => IInputTheme = (
     fontWeight: fontWeights.normal,
     lineHeight: lineHeights.small,
   },
-  input: {
+  select: {
     width: "100%",
     outline: "none",
     border: "none",
     borderBottom: "1px solid " + pallete.grey.main,
     fontFamily: fonts.body,
     color: pallete.text.main,
-    fontSize:"1rem",
+    fontSize: "1rem",
     fontWeight: fontWeights.normal,
     lineHeight: lineHeights.small,
     borderRadius: borderRadius.small,
@@ -30,7 +31,7 @@ export const MakeInputTheme: (_: IPalette) => IInputTheme = (
   error: {
     fontFamily: fonts.body,
     color: pallete.danger.main,
-    fontSize:"1rem",
+    fontSize:  "1rem",
     fontWeight: fontWeights.normal,
     lineHeight: lineHeights.small,
   },

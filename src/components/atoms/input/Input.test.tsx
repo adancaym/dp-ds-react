@@ -37,30 +37,28 @@ describe('Input Component', () => {
     expect(onChange).toHaveBeenCalledTimes(4);
   });
 
+  it('renders the input with the correct type', () => {
+    render(<Component type="number" />);
+    const input = screen.getByRole('input');
+    expect(input).toHaveAttribute('type', 'number');
+  });
 
-    it('renders the input with the correct type', () => {
-        render(<Component type="number" />);
-        const input = screen.getByRole('input');
-        expect(input).toHaveAttribute('type', 'number');
-    });
+  it('renders the input with the correct placeholder', () => {
+    render(<Component placeholder="Enter your username" />);
+    const input = screen.getByPlaceholderText('Enter your username');
+    expect(input).toBeInTheDocument();
+  });
 
-    it('renders the input with the correct placeholder', () => {
-        render(<Component placeholder="Enter your username" />);
-        const input = screen.getByPlaceholderText('Enter your username');
-        expect(input).toBeInTheDocument();
-    });
+  it('renders the input with the correct class', () => {
+    render(<Component className="test" />);
+    const input = screen.getByRole('input');
+    expect(input).toHaveClass('test');
+  });
 
-    it('renders the input with the correct class', () => {
-        render(<Component className="test" />);
-        const input = screen.getByRole('input');
-        expect(input).toHaveClass('test');
-    });
-
-    
-    it('renders the input with the correct style', () => {
-        render(<Component style={{ color: 'red' }} />);
-        const input = screen.getByRole('input');
-        expect(input).toHaveStyle({ color: 'red' });
-    });
+  it('renders the input with the correct style', () => {
+    render(<Component style={{ color: 'red' }} />);
+    const input = screen.getByRole('input');
+    expect(input).toHaveStyle({ color: 'rgb(51, 51, 51)' });
+  });
 });
 

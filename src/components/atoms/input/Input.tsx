@@ -2,17 +2,17 @@ import { FC } from 'react';
 import { Reader, withDescription, withError, withLabel, withStyle } from 'src/components';
 import { MakeInputTheme, useTheme } from 'src/theme';
 
-import { InputProps } from './type';
+import { IInput } from './type';
 
-const Input : FC<InputProps> = ({ label, error, description, style, ...props}: InputProps) => {
+const Input : FC<IInput> = ({ label, error, description, ...props}: IInput) => {
   const { theme } = useTheme();
   const inputStyle = MakeInputTheme(theme);
 
   let ReaderInput = Reader;
   
-  if(style) ReaderInput = withStyle({
+  ReaderInput = withStyle({
     Component: ReaderInput,
-    style
+    style: inputStyle.input,
   });
   
   if(label) ReaderInput = withLabel({
