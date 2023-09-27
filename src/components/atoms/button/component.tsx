@@ -1,4 +1,4 @@
-import { createElement, FC, memo } from 'react';
+import { FC, memo } from 'react';
 import { Trigger, withChildrenText, withDescription, withStyle } from 'src/components';
 import { MakeButtonTheme, useTheme } from 'src/theme';
 
@@ -11,34 +11,30 @@ let Button: FC<ButtonProps> = (props) => {
   const { theme } = useTheme();
   const { typography, button } = MakeButtonTheme(theme, props);
 
-  let Component = Trigger;
+  let TriggerButton = Trigger
 
-  Component = withStyle({
-    Component,
+  TriggerButton = withStyle({
+    Component: TriggerButton,
     style: button
   })
   
-  Component = withDescription<ButtonProps>({ 
-    Component, 
+  TriggerButton = withDescription({ 
+    Component: TriggerButton,
     description,
   });
   
-  Component = withChildrenText<ButtonProps>({
-    Component,
+  TriggerButton = withChildrenText({
+    Component: TriggerButton,
     children,
     style: typography,
   });
 
   const newprops = { 
     ...props,
-    className: `button ${props.className ?? ''} ${variant} button-${variant}`,
+    className: `${props.className ?? ''} ${variant} button-${variant}`,
   }
 
-  
-  return createElement(
-    Component,
-    newprops
-  );
+  return <TriggerButton {...newprops} />;
 };
 
 Button = memo(Button);

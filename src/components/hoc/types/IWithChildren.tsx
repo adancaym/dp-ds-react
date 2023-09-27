@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 export interface IWithChildren {
-  children?: string | React.ReactNode | React.ReactNode[];
+  children?: ReactNode
 }

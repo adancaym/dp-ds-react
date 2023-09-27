@@ -1,12 +1,9 @@
-import { HTMLInputTypeAttribute } from 'react';
-import { IWithOnChange, IWithStyle } from 'src/components/hoc';
+import { ChangeEvent, DetailedHTMLProps, HTMLAttributes, HTMLInputTypeAttribute } from 'react';
 import { IComponent } from 'src/types';
 
-export type IReaderProps<T> =
-  IComponent &
-  IWithStyle &
-  IWithOnChange<T> & {
-    type?: HTMLInputTypeAttribute;
-    value?: T;
-    plaveholder?: string;
-  };
+interface TypeReader extends DetailedHTMLProps<HTMLAttributes<HTMLInputElement>,HTMLInputElement> {}
+export interface IReaderProps extends IComponent, TypeReader  {
+  value?: string;
+  onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
+  type?: HTMLInputTypeAttribute;
+};

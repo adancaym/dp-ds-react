@@ -7,7 +7,6 @@ export * from './IWithError';
 export * from './IWithLabel';
 export * from './IWithNavigation';
 export * from './IWithOnChange';
-export * from './IWithOnClick';
 export * from './IWithPlaceholder';
 export * from './IWithSize';
 export * from './IWithStyle';

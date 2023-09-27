@@ -1,6 +1,7 @@
-import { Children, FC, createElement } from "react";
-import { IComponent } from "src/types";
-import { IWithChildren, IWithStyle } from "./types";
+import { Children, FC } from 'react';
+import { IComponent } from 'src/types';
+
+import { IWithChildren, IWithStyle } from './types';
 
 export const WithNoStringChildren =
   <T extends IComponent & IWithChildren & IWithStyle>(Component: FC<T>) =>
@@ -11,5 +12,5 @@ export const WithNoStringChildren =
     );
     if (hasString) throw new Error("Component cannot have string children");
 
-    return createElement(Component, props);
-  };
+    return <Component {...props} />
+  }

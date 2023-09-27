@@ -1,18 +1,14 @@
-import { createElement } from 'react';
-import { Container, Typography } from 'src/components';
+import { Typography, withStyle } from 'src/components';
 import { IComponent } from 'src/types';
 
 import { IWithDescriptionProps } from './types/IWithDescriptionProps';
 
-export const withDescription =
-  <T extends IComponent>({
-    Component,
-    description,
-    style,
-  }: IWithDescriptionProps<T>) =>
-  (props: T) => createElement(
-    Container,
-    null,
-    createElement(Component, props),
-    description && createElement(Typography, {style}, description)
-  )
+
+export const withDescription = <T extends IComponent>({ Component, description, style }: IWithDescriptionProps<T>) => (props: T) =>  {
+    const Description = withStyle({Component: Typography, style})
+
+    return <>
+      <Component {...props} />
+      <Description className='description'>{description}</Description>
+    </>
+  }

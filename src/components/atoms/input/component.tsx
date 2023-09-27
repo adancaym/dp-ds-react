@@ -1,26 +1,20 @@
-import { createElement, FC } from 'react';
+import { FC } from 'react';
 import { Reader, withDescription, withError, withLabel, withStyle } from 'src/components';
 import { MakeInputTheme, useTheme } from 'src/theme';
 import { ITypeDataInput } from 'src/types';
 
 import { InputProps } from './type';
 
-const Input = <T extends ITypeDataInput = string>({
-  label,
-  error,
-  description,
-  style,
-  ...props
-}: InputProps<T>) => {
+const Input = <T extends ITypeDataInput = string>({ label, error, description, style, ...props}: InputProps<T>) => {
   const { theme } = useTheme();
   const inputStyle = MakeInputTheme(theme);
 
-  let Wrapper = Reader as FC<InputProps<T>>;
+  let Wrapper = Reader;
   
   Wrapper = withStyle({
     Component: Wrapper,
     style
-  })
+  });
   
   Wrapper = withLabel<InputProps<T>>({
     Component: Wrapper,
@@ -38,10 +32,7 @@ const Input = <T extends ITypeDataInput = string>({
     style: inputStyle.description,
   });
 
-  return createElement(
-    Wrapper, 
-    props
-  );
+  return <Wrapper {...props} />;
 };
 
 export default Input;

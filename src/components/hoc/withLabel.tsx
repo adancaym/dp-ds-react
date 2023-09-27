@@ -1,21 +1,13 @@
-import {
-  Container,
-  Typography,
-  IWith,
-  IWithStyle,
-  IWithLabel,
-} from "src/components";
-import { createElement } from "react";
-import { IComponent } from "src/types";
+import { IWith, IWithLabel, IWithStyle, Typography, withStyle } from 'src/components';
+import { IComponent } from 'src/types';
 
 type IWithLabelProps<T> = IWith<T> & IWithStyle & IWithLabel;
 
-export const withLabel =
-  <T extends IComponent>({ Component, style, label }: IWithLabelProps<T>) =>
-  (props: T) =>
-    createElement(
-      Container,
-      null,
-      label && createElement(Typography, { style }, label),
-      createElement(Component, props)
-    );
+export const withLabel = <T extends IComponent>({ Component, style, label }: IWithLabelProps<T>) => (props: T) => {
+    const Label = withStyle({Component: Typography, style})
+
+    return <>
+      <Label as='label' className='labe'>{label}</Label>
+      <Component {...props} />
+    </>
+  }

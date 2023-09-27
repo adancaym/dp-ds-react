@@ -1,10 +1,9 @@
-import React, { DetailedHTMLProps, HTMLAttributes } from 'react';
+import React from 'react';
 
 import { IContainer } from './type';
 
-type TypeContainer = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>
 
-let Component: React.FC<IContainer & TypeContainer> = ( props: IContainer) => {
+let Container: React.FC<IContainer> = ( props: IContainer) => {
 
   const role = props.role ?? `container`
   const className = `container ${props.className ?? ''}`
@@ -12,5 +11,5 @@ let Component: React.FC<IContainer & TypeContainer> = ( props: IContainer) => {
   return <div {...props} role={role} className={className}/>
 }
 
-export default Component;
+export default Container;
 
