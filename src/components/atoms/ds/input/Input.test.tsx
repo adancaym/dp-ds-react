@@ -3,6 +3,7 @@ import userEvent from '@testing-library/user-event';
 
 import Input from './Input';
 
+
 describe('Input Component', () => {
   it('renders the input with the correct label', () => {
     render(<Input label="Username" />);
@@ -21,6 +22,7 @@ describe('Input Component', () => {
     const error = screen.getByText('Invalid input');
     expect(error).toBeInTheDocument();
   });
+
 
   it('renders the input with the correct description', () => {
     render(<Input description="Enter your username" />);
