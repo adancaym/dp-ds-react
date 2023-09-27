@@ -1,7 +1,7 @@
-import { ButtonProps } from 'src/components/atoms/button/type';
 import { IPalette } from 'src/theme';
 
 import { borderRadius, fonts, fontWeights, lineHeights, sizes, space } from '../constants';
+import { ButtonProps } from 'src/components';
 
 export const MakeButtonTheme = (
   pallete: IPalette,
