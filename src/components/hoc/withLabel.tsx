@@ -7,7 +7,7 @@ export const withLabel = <T extends IComponent>({ Component, style, label }: IWi
     const Label = withStyle({Component: Typography, style})
 
     return <>
-      { label && <Label as='label' className='labe'>{label}</Label> }
+      { label && <Label as='label' className='label'>{label}</Label> }
       <Component {...props} />
     </>
   }

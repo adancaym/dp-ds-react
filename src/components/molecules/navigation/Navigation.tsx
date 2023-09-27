@@ -10,22 +10,12 @@ export const Navigation = ({ children = [], router }: INavigationProps) => {
   const { theme } = useTheme();
   const { toolbar, section } = MakeNavigationTheme(theme);
 
-  const routes = Children.map(
-    children,
-    ({ props }: INavigationItem) => props
-  ).filter(({ path }) => path);
+  const routes = Children.map( children, ({ props }: INavigationItem) => props).filter(({ path }) => path);
+  const allRoutesExist = routes.every(({ path }) => router.map(({ path: routePath }) => routePath).includes(path));
 
-  const allRoutesExist = routes.every(({ path }) => {
-    return router.map(({ path: routePath }) => routePath).includes(path);
-  });
+  const missingRoutes = routes.filter(({ path }) => !router.map(({ path: routePath }) => routePath).includes(path));
 
-  const missingRoutes = routes.filter(({ path }) => {
-    return !router.map(({ path: routePath }) => routePath).includes(path);
-  });
-
-  const message = `%cMissing routes: ${missingRoutes
-    .map(({ path }) => path)
-    .join(", ")}`;
+  const message = `%cMissing routes: ${missingRoutes.map(({ path }) => path).join(", ")}`;
 
   if (!allRoutesExist) console.log(message, "color: red; font-size: 1.2rem");
 

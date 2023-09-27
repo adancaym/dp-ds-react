@@ -17,12 +17,11 @@ const Tab = (tab: ITabProps) => {
     return currentTab === name
   }
 
-  return display() ? <Container 
-  role="tab-content" 
-  className={`tab-content-${tab.name}`} 
-  data-testid={`tab-content-${tab.name}`} 
-  children={children} 
-  /> : null;
+  return(
+    display() ? 
+      <Container role="tab-content" className={`tab-content-${tab.name}`} data-testid={`tab-content-${tab.name}`} children={children} /> : 
+      null
+  );
 };
 
 
