@@ -1,6 +1,5 @@
-import { createContext, useState } from 'react'
+import { createContext, useMemo } from 'react'
 import { modes } from '../constants/modes'
-import { type IPalette } from 'src/theme/types'
 import { type IThemeContextType } from '../types'
 
 interface IThemeProvider {
@@ -8,13 +7,13 @@ interface IThemeProvider {
 }
 
 export const ThemeContext = createContext<IThemeContextType>({
-  theme: modes.light,
-  setTheme: (_: IPalette) => {}
+  theme: modes.light
 })
 
 export const ThemeProvider = ({ children }: IThemeProvider) => {
-  const [theme, setTheme] = useState<IPalette>(modes.light)
+  const theme = useMemo(() => ({ theme: modes.light }), [])
+
   return (
-    <ThemeContext.Provider value={{ theme, setTheme }} children={children} />
+    <ThemeContext.Provider value={theme} children={children} />
   )
 }

@@ -8,9 +8,5 @@ export interface IThemeContextType {
    * The current theme object.
    */
   theme: IPalette
-  /**
-   * A function that sets the theme object.
-   * @param theme - The new theme object to set.
-   */
-  setTheme: (theme: IPalette) => void
+
 }

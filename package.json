@@ -23,12 +23,13 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "yarn lint && react-scripts test --runInBand --detectOpenHandles --watchAll=false --coverage --testResultsProcessor jest-sonar-reporter && yarn sonarqube",
+    "test": "react-scripts test --runInBand --detectOpenHandles --watchAll=false --coverage --testResultsProcessor jest-sonar-reporter",
     "eject": "react-scripts eject",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "sonarqube": "node sonarqube-scanner.js",
-    "lint": "eslint \"**/*.{ts,tsx}\" --fix"
+    "lint": "npx eslint \"**/*.{ts,tsx}\" -f json -o eslint-report.json --fix",
+    "pre-commit": "yarn lint && yarn test && yarn sonarqube"
   },
   "eslintConfig": {
     "extends": [
