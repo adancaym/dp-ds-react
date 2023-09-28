@@ -5,4 +5,5 @@ export interface IComponent {
     className?: string
     role?: AriaRole | undefined
     'data-testid'? : string | number
+    disabled?: boolean
 }

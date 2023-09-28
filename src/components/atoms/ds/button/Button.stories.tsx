@@ -90,7 +90,18 @@ export const Success: Story = {
   },
 };
 
+export const Info: Story = {
+  args: {
+    type: 'button',
+    color: 'info',
+    children: 'Button'
+  },
+};
 
-
-
-
+export const Disabled: Story = {
+  args: {
+    type: 'button',
+    disabled: true,
+    children: 'Button'
+  },
+};
