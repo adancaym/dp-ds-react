@@ -1,23 +1,65 @@
-
-
-import React from "react";
-import { Meta, Story } from "@storybook/react"
+import { Meta,  StoryObj } from "@storybook/react"
 import Select from "./Select";
-import { ISelect } from "./type";
 
 export default {
     component: Select,
     tags: ["autodocs"],
 } as Meta;
 
-const Template: Story<ISelect> = (args) => <Select {...args} />;
 
-export const Default = Template.bind({});
-Default.args = {
-    options: [
-        { value: "option1", label: "Option 1" },
-        { value: "option2", label: "Option 2" },
-        { value: "option3", label: "Option 3" },
-    ],
-    placeholder: "Select an option",
+type Story = StoryObj<typeof Select>;
+
+
+export const Default: Story = {
+    args: {
+        options: [
+            { label: 'Option 1', value: 'option1' },
+            { label: 'Option 2', value: 'option2' },
+            { label: 'Option 3', value: 'option3' },
+        ],
+    },
+};
+
+export const WithLabel: Story = {
+    args: {
+        label: 'Label',
+        options: [
+            { label: 'Option 1', value: 'option1' },
+            { label: 'Option 2', value: 'option2' },
+            { label: 'Option 3', value: 'option3' },
+        ],
+    },
+};
+
+export const WithPlaceholder: Story = {
+    args: {
+        placeholder: 'Placeholder',
+        options: [
+            { label: 'Option 1', value: 'option1' },
+            { label: 'Option 2', value: 'option2' },
+            { label: 'Option 3', value: 'option3' },
+        ],
+    },
+};
+
+export const WithError: Story = {
+    args: {
+        error: 'Error',
+        options: [
+            { label: 'Option 1', value: 'option1' },
+            { label: 'Option 2', value: 'option2' },
+            { label: 'Option 3', value: 'option3' },
+        ],
+    },
+};
+
+export const WithDescription: Story = {
+    args: {
+        description: 'Description',
+        options: [
+            { label: 'Option 1', value: 'option1' },
+            { label: 'Option 2', value: 'option2' },
+            { label: 'Option 3', value: 'option3' },
+        ],
+    },
 };

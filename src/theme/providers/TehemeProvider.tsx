@@ -12,9 +12,14 @@ export const ThemeContext = createContext<IThemeContextType>({
   setTheme: (_: IPalette) => {},
 });
 
+
 export const ThemeProvider = ({ children }: IThemeProvider) => {
   const [theme, setTheme] = useState<IPalette>(modes.light);
   return (
     <ThemeContext.Provider value={{ theme, setTheme }} children={children} />
   );
 };
+
+
+
+

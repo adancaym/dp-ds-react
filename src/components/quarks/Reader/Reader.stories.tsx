@@ -1,26 +1,18 @@
-import { Story } from '@storybook/react';
-import { useState } from 'react';
 
 import Reader from './Reader';
-import { IReaderProps } from './type';
+import { StoryObj } from '@storybook/react';
 
 export default {
   component: Reader,
   tags: ['autodocs'],
 };
-const Template: Story<IReaderProps> = (args) => {
-  const [value, setValue] = useState(args.value);
 
-  return (
-    <Reader
-      {...args}
-      value={value}
-      onChange={(newValue) => setValue(newValue.target.value)}
-    />
-  );
-};
+type Story = StoryObj<typeof Reader>;
 
-export const Default = Template.bind({});
-Default.args = {
-  type: 'text',
+export const Default: Story = {
+  args: {
+    onChange: (value: React.ChangeEvent<HTMLInputElement>) => {
+      console.log(value.target.value);
+    }
+  },
 };

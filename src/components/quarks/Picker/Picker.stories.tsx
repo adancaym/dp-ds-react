@@ -1,23 +1,23 @@
-
-import React from 'react';
-import { Story, Meta } from '@storybook/react';
 import Picker from './Picker';
-import { IPicker } from './type';
 
-export default {
-    component: Picker,
-    tags: ['autodocs'],
-} as Meta;
+import type { Meta, StoryObj } from "@storybook/react";
 
-const Template: Story<IPicker> = (args) => <Picker {...args} />;
-
-export const Default = Template.bind({});
-
-
-Default.args = {
-    options: [
-        { value: '1', label: '1' },
-        { value: '2', label: '2' },
-        { value: '3', label: '3' },
-    ],
+const meta: Meta<typeof Picker> = { 
+  component: Picker,
+  tags: ["autodocs"],
 };
+export default meta;
+
+type Story = StoryObj<typeof Picker>;
+
+export const Default: Story = {
+  args: {
+    options: [
+      { label: 'Option 1', value: 'option1' },
+      { label: 'Option 2', value: 'option2' },
+      { label: 'Option 3', value: 'option3' },
+    ],
+  },
+};
+
+

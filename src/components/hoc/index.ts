@@ -1,4 +1,5 @@
 export * from './types';
+export * from './withBrowserRouter';
 export * from './withChildrenText';
 export * from './withDescription';
 export * from './withError';
@@ -7,3 +8,4 @@ export * from './withNavigation';
 export * from './withNoStringChildren';
 export * from './withStringChildren';
 export * from './withStyle';
+export * from './withThemeContext';

@@ -1,15 +1,15 @@
 import { FC } from 'react';
-import { Reader, withDescription, withError, withLabel, withStyle } from 'src/components';
+import { Reader, withDescription, withError, withLabel, withStyle, withThemeContext } from 'src/components';
 import { MakeInputTheme, useTheme } from 'src/theme';
 
 import { IInput } from './type';
 
-const Input : FC<IInput> = ({ label, error, description, ...props}: IInput) => {
+let Input : FC<IInput> = ({ label, error, description, ...props}: IInput) => {
   const { theme } = useTheme();
   const inputStyle = MakeInputTheme(theme);
 
-  let ReaderInput = Reader;
-  
+  let ReaderInput = withThemeContext({ Component: Reader })
+
   ReaderInput = withStyle({
     Component: ReaderInput,
     style: inputStyle.input,
@@ -33,7 +33,9 @@ const Input : FC<IInput> = ({ label, error, description, ...props}: IInput) => {
     style: inputStyle.description,
   });
 
+
   return <ReaderInput {...props} />;
 };
+
 
 export default Input;

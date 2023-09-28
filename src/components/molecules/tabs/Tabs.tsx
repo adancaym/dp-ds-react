@@ -1,5 +1,5 @@
 import { createContext, FC, useState } from 'react';
-import { Container, Text } from 'src/components';
+import { Container, Text, withThemeContext } from 'src/components';
 import { useTheme } from 'src/theme';
 import { MakeTabsTheme } from 'src/theme/components';
 
@@ -14,7 +14,7 @@ export const TabContext = createContext<ITabContextProps>({
 
 const { Provider } = TabContext;
 
-const Tabs: FC<ITabsProps> = ({ children }) => {
+let Tabs: FC<ITabsProps> = ({ children }) => {
   const { theme } = useTheme();
   const { toolbar, tab, tabActive, content } = MakeTabsTheme(theme);
 
@@ -44,5 +44,7 @@ const Tabs: FC<ITabsProps> = ({ children }) => {
     </Provider>
   );
 };
+
+Tabs = withThemeContext({ Component: Tabs });
 
 export default Tabs;

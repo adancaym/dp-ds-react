@@ -23,6 +23,7 @@ const meta = {
 } satisfies Meta<typeof Button>;
 
 export default meta;
+
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
@@ -56,3 +57,40 @@ export const Small: Story = {
     children: 'Button'
   },
 };
+
+export const Full: Story = {
+  args: {
+    type: 'button',
+    size: 'full',
+    children: 'Button'
+  },
+};
+
+export const Warining: Story = {
+  args: {
+    type: 'button',
+    color: 'warning',
+    children: 'Button'
+  },
+};
+
+export const Danger: Story = {
+  args: {
+    type: 'button',
+    color: 'danger',
+    children: 'Button'
+  },
+};
+
+export const Success: Story = {
+  args: {
+    type: 'button',
+    color: 'success',
+    children: 'Button'
+  },
+};
+
+
+
+
+

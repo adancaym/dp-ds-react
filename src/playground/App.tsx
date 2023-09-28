@@ -1,5 +1,5 @@
-import { createContext, ReactNode, useContext, useState } from 'react';
-import { Container, Text, withNavigation } from 'src/components';
+import { createContext, FC, ReactNode, useContext, useState } from 'react';
+import { Container, Text, withBrowserRouter, withNavigation } from 'src/components';
 
 export interface SidebarContextProps {
   open: boolean
@@ -28,7 +28,7 @@ export const Sidebar = ({children}: SidebarProps) => {
 
 }
 
-const Component = () => (
+let Component: FC = () => (
   <>
     <Container>
       <Text>Github</Text>
@@ -36,7 +36,12 @@ const Component = () => (
   </>
 );
 
-export default withNavigation({
+
+Component =withBrowserRouter({
+  Component,
+})
+
+Component = withNavigation({
   Component,
   routes: [
     {
@@ -71,3 +76,6 @@ export default withNavigation({
     },
   ],
 });
+
+
+export default Component;

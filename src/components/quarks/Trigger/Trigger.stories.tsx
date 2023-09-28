@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 
 import Trigger from './Trigger';
@@ -12,6 +12,15 @@ export default {
   },
 } as Meta;
 
-const Template: Story = (args) => <Trigger {...args}>Click me</Trigger>;
+type Story = StoryObj<typeof Trigger>;
 
-export const Default = Template.bind({});
+export const Default: Story = {
+  args: {
+    children: [
+      <div key="1">Trigger</div>,
+    ],
+    onClick: () => {
+      console.log('Trigger');
+    },
+  },
+};

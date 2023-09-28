@@ -1,5 +1,5 @@
 import { FC, memo } from 'react';
-import { Trigger, withChildrenText, withDescription, withStyle } from 'src/components';
+import { Trigger, withChildrenText, withDescription, withStyle, withThemeContext } from 'src/components';
 import { MakeButtonTheme, useTheme } from 'src/theme';
 
 import { ButtonProps } from './type';
@@ -11,7 +11,7 @@ let Button: FC<ButtonProps> = (props) => {
   const { theme } = useTheme();
   const buttonStyle = MakeButtonTheme(theme, props);
 
-  let TriggerButton = Trigger
+  let TriggerButton = withThemeContext({ Component: Trigger });
 
   TriggerButton = withStyle({
     Component: TriggerButton,
@@ -36,6 +36,7 @@ let Button: FC<ButtonProps> = (props) => {
 
   return <TriggerButton type={type} {...newprops} />;
 };
+
 
 Button = memo(Button);
 

@@ -1,10 +1,10 @@
-import { Children } from 'react';
-import { Container, INavigationItem, INavigationProps, IPositionVariant } from 'src/components';
+import { Children, FC } from 'react';
+import { Container, INavigationItem, INavigationProps, IPositionVariant, withBrowserRouter, withThemeContext } from 'src/components';
 import { MakeNavigationTheme, useTheme } from 'src/theme';
 
 import { Section } from './components/Section';
 
-export const Navigation = ({ children = [], router }: INavigationProps) => {
+let Navigation: FC<INavigationProps> = ({ children = [], router }) => {
   const positions = ["left", "center", "right"] as IPositionVariant[];
 
   const { theme } = useTheme();
@@ -19,7 +19,7 @@ export const Navigation = ({ children = [], router }: INavigationProps) => {
 
   if (!allRoutesExist) console.log(message, "color: red; font-size: 1.2rem");
 
-  return (
+  let NavigationElement: FC = () => (
     <Container style={toolbar} role='navigation'>
       {positions.map((position) => (
         <Section
@@ -32,4 +32,11 @@ export const Navigation = ({ children = [], router }: INavigationProps) => {
       ))}
     </Container>
   );
+  NavigationElement = withBrowserRouter({ Component: NavigationElement });
+  NavigationElement = withThemeContext({ Component: NavigationElement });
+  return <NavigationElement />;
 };
+
+
+
+export default Navigation;

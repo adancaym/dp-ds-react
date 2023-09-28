@@ -1,7 +1,8 @@
-import { Navigation, NavigationItem } from 'src/components';
+import {  NavigationItem } from 'src/components';
 import { IComponent } from 'src/types';
 
 import { IWithNavigation } from './types';
+import Navigation from '../molecules/navigation/Navigation';
 
 
 export const withNavigation = <T extends IComponent>({ Component, routes }: IWithNavigation<T>) => (props: T) =>
@@ -13,5 +14,3 @@ export const withNavigation = <T extends IComponent>({ Component, routes }: IWit
     <Component {...props} />
   </>
 );
-
-    

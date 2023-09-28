@@ -1,41 +1,50 @@
-import { Meta, Story } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
+import { FC } from "react";
 import { BrowserRouter } from 'react-router-dom';
-import { INavigationProps, Navigation, NavigationItem } from 'src/components';
+import { INavigationProps, NavigationItem } from 'src/components';
+import { routes } from "src/components/router/routes";
+import Navigation from "./Navigation";
 
-export default {
+const meta: Meta<typeof Navigation> = {
   component: Navigation,
   tags: ['autodocs'],
-} as Meta;
-
-
-const Template: Story<INavigationProps> = (args) => (
-    <BrowserRouter>
-        <Navigation {...args} />
-    </BrowserRouter>
-) ;
-
-export const Default = Template.bind({});
-Default.args = {
-  children: [
-    <NavigationItem position='left' key="home" path="/" label="Home" />,
-    <NavigationItem position='center' key="about" path="/about" label="About" />,
-    <NavigationItem position='right' key="contact" path="/contact" label="Contact" />,
-  ],
-  router: [
-    { path: '/', element: <Home /> },
-    { path: '/about', element: <About /> },
-    { path: '/contact', element: <Contact /> },
-  ],
 };
 
-function Home() {
-  return <h1>Home</h1>;
-}
+export default meta;
 
-function About() {
-  return <h1>About</h1>;
-}
+const Template: FC<INavigationProps> = (args) => (
+  <BrowserRouter>
+    <Navigation {...args} />
+  </BrowserRouter>
+);
+type Story = StoryObj<typeof Template>;
 
-function Contact() {
-  return <h1>Contact</h1>;
-}
+const args: INavigationProps = {
+  router: routes,
+  children: [
+    <NavigationItem
+      key="1"
+
+      label="Home"
+      path="/"
+      position="left"
+    />,
+    <NavigationItem
+
+      key="2"
+      label="About"
+      path="/about"
+      position="left"
+    />,
+    <NavigationItem
+        key="3"
+        label="Contact"
+        path="/contact"
+        position="right"
+    />
+  ]
+};
+
+export const Default: Story = {
+  args
+};

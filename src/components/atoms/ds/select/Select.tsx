@@ -1,15 +1,14 @@
 import { FC } from "react";
-import { Picker, withDescription, withError, withLabel, withStyle } from "src/components";
+import { Picker, withDescription, withError, withLabel, withStyle, withThemeContext } from "src/components";
 import { ISelect } from "./type";
 import { useTheme, MakeSelectTheme } from "src/theme";
 
-const Select: FC<ISelect> = ({ label, error, description, ...props }) => {
+let Select: FC<ISelect> = ({ label, error, description, ...props }) => {
     const {theme} = useTheme();
 
     const selectStyles = MakeSelectTheme(theme);
 
-    let PickerSelect = Picker;
-
+    let PickerSelect = withThemeContext({Component: Picker});
 
     PickerSelect = withStyle({
         Component: PickerSelect,

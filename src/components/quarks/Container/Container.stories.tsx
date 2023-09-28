@@ -1,17 +1,24 @@
-import { Meta, Story } from '@storybook/react';
 import React from 'react';
 
 import Container from './Container';
-import { IContainer } from './type';
 
-export default {
+import type { Meta, StoryObj } from "@storybook/react";
+
+const meta: Meta<typeof Container> = { 
   component: Container,
-  tags: ['autodocs'],
-} as Meta;
-
-const Template: Story<IContainer> = (args) => <Container {...args} />;
-
-export const Default = Template.bind({});
-Default.args = {
-  children: 'Hello World',
+  tags: ["autodocs"],
 };
+export default meta;
+
+type Story = StoryObj<typeof Container>;
+
+export const Default: Story = {
+  args: {
+    children: [
+      <div key="1">Container</div>,
+    ],
+  },
+};
+
+
+
