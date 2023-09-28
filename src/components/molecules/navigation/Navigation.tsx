@@ -27,7 +27,7 @@ const NavigationElement: FC<INavigationElementProps> = ({ children }) => {
     <Container style={toolbar} role="navigation">
       {positions.map((position) => (
         <Section
-          key={position}
+          key={ `${position}-section` }
           position={position}
           styles={section}
           children={children}

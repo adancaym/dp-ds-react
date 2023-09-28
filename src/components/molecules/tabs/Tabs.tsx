@@ -14,9 +14,34 @@ export const TabContext = createContext<ITabContextProps>({
 
 const { Provider } = TabContext
 
+interface ITabsLabelsProps {
+  tabs: ITabProps[]
+  currentTab: string | undefined
+  setCurrentTab: (name: string) => void
+}
+
+const TabsLabels = (
+  { tabs, currentTab, setCurrentTab }: ITabsLabelsProps
+) => {
+  const { theme } = useTheme()
+  const { toolbar, tab, tabActive } = MakeTabsTheme(theme)
+  return (
+
+  <Container style={toolbar}>
+    {tabs.map(({ label, name }) => (
+      <Container onClick={() => { setCurrentTab(name) }} key={name} style={currentTab === name ? tabActive : tab} >
+        <Text as='label' role='tab-label' data-testid={`tab-${name}`} >
+          {label}
+        </Text>
+      </Container>
+    ))}
+  </Container>
+  )
+}
+
 let Tabs: FC<ITabsProps> = ({ children }) => {
   const { theme } = useTheme()
-  const { toolbar, tab, tabActive, content } = MakeTabsTheme(theme)
+  const { content } = MakeTabsTheme(theme)
 
   const [tabs, setTabs] = useState<ITabProps[]>([])
   const [currentTab, setCurrentTab] = useState<string | undefined>(undefined)
@@ -24,22 +49,9 @@ let Tabs: FC<ITabsProps> = ({ children }) => {
   const addTab = (tab: ITabProps) => {
     if (!tabs.map(({ name }) => name).includes(tab.name)) setTabs([tab, ...tabs])
   }
-
-  const TabsLabels = () => (
-    <Container style={toolbar}>
-      {tabs.map(({ label, name }) => (
-        <Container onClick={() => { setCurrentTab(name) }} key={name} style={currentTab === name ? tabActive : tab} >
-          <Text as='label' role='tab-label' data-testid={`tab-${name}`} >
-            {label}
-          </Text>
-        </Container>
-      ))}
-    </Container>
-  )
-
   return (
     <Provider value={{ tabs, addTab, currentTab, setCurrentTab }}>
-      <TabsLabels />
+      <TabsLabels tabs={tabs} currentTab={currentTab} setCurrentTab={setCurrentTab} />
       <Container role='tab-container' style={content} children={children} />
     </Provider>
   )
