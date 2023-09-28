@@ -1,8 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
-import React from 'react';
 
 import Text from './Text';
-import { IText } from './type';
 
 export default {
     tags: ['autodocs'],
@@ -306,5 +304,5 @@ export const Footer: Story = {
     children: 'Footer',
   },
 };
-  
+
 

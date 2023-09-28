@@ -1,6 +1,4 @@
 import { Meta, StoryObj } from '@storybook/react';
-import React, { useState } from 'react';
-
 import Input from './Input';
 
 export default {
@@ -10,7 +8,6 @@ export default {
     onChange: { action: 'changed' },
   },
 } as Meta;
-
 
 type Story = StoryObj<typeof Input>;
 
@@ -22,7 +19,6 @@ export const Default: Story = {
     },
   },
 };
-
 
 export const WithError: Story = {
   args: {
@@ -63,5 +59,7 @@ export const WithDescription: Story = {
     },
   },
 };
+
+
 
 
