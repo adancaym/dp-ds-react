@@ -1,10 +1,10 @@
-import { Children } from 'react';
-import { Container, INavigationItem, ISecionProps } from 'src/components';
+import { Children } from 'react'
+import { Container, type INavigationItem, type ISecionProps } from 'src/components'
 
 export const Section = ({
   children = [],
   styles,
-  position = "left",
+  position = 'left',
   ...props
 }: ISecionProps) => (
   <Container
@@ -14,4 +14,4 @@ export const Section = ({
     )}
     {...props}
   />
-);
+)

@@ -1,4 +1,4 @@
-import { useContext } from "react";
-import { TabContext } from "../Tabs";
+import { useContext } from 'react'
+import { TabContext } from '../Tabs'
 
-export const useTabs = () => useContext(TabContext);
+export const useTabs = () => useContext(TabContext)

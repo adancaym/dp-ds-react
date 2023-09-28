@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testExecutions version="1">
+  <file path="/Users/caym/Documents/code/frontend/src/components/molecules/navigation/Navigation.test.tsx">
+    <testCase name="Navigation should render without errors" duration="31"/>
+    <testCase name="Navigation should render all navigation sections" duration="5"/>
+    <testCase name="Navigation should log missing routes if not all routes exist in router" duration="8"/>
+    <testCase name="Navigation should not log missing routes if all routes exist in router" duration="4"/>
+  </file>
+  <file path="/Users/caym/Documents/code/frontend/src/components/atoms/ds/input/Input.test.tsx">
+    <testCase name="Input Component renders the input with the correct label" duration="12"/>
+    <testCase name="Input Component renders the input with the correct value" duration="3"/>
+    <testCase name="Input Component renders the input with the correct error message" duration="3"/>
+    <testCase name="Input Component renders the input with the correct description" duration="3"/>
+    <testCase name="Input Component calls the onChange function when the input value changes" duration="21"/>
+    <testCase name="Input Component renders the input with the correct type" duration="7"/>
+    <testCase name="Input Component renders the input with the correct placeholder" duration="2"/>
+    <testCase name="Input Component renders the input with the correct class" duration="4"/>
+    <testCase name="Input Component renders the input with the correct style" duration="4"/>
+  </file>
+  <file path="/Users/caym/Documents/code/frontend/src/components/atoms/ds/select/Select.test.tsx">
+    <testCase name="Select renders the label and options correctly" duration="11"/>
+    <testCase name="Select calls the onChange handler when an option is selected" duration="19"/>
+    <testCase name="Select displays an error message when the error prop is set" duration="3"/>
+    <testCase name="Select displays a description when the description prop is set" duration="3"/>
+  </file>
+  <file path="/Users/caym/Documents/code/frontend/src/components/atoms/ds/button/Button.test.tsx">
+    <testCase name="Button renders button text" duration="9"/>
+    <testCase name="Button renders button with type submit" duration="8"/>
+    <testCase name="Button renders button with type button" duration="4"/>
+    <testCase name="Button renders button with type reset" duration="4"/>
+    <testCase name="Button renders button with description" duration="3"/>
+    <testCase name="Button renders button with variant primary" duration="3"/>
+    <testCase name="Button renders button with variant secondary" duration="6"/>
+  </file>
+  <file path="/Users/caym/Documents/code/frontend/src/App.test.tsx">
+    <testCase name="renders app" duration="15"/>
+  </file>
+  <file path="/Users/caym/Documents/code/frontend/src/components/molecules/tabs/Tabs.test.tsx">
+    <testCase name="Tabs renders tabs with correct labels" duration="12"/>
+    <testCase name="Tabs renders tab content" duration="10"/>
+    <testCase name="Tabs renders tab content with correct label" duration="4"/>
+  </file>
+  <file path="/Users/caym/Documents/code/frontend/src/components/quarks/Picker/Picker.test.tsx">
+    <testCase name="Picker renders options correctly" duration="33"/>
+    <testCase name="Picker calls onChange when an option is selected" duration="6"/>
+  </file>
+  <file path="/Users/caym/Documents/code/frontend/src/components/quarks/Container/Container.test.tsx">
+    <testCase name="Container component renders without crashing" duration="15"/>
+    <testCase name="Container component renders with children" duration="2"/>
+    <testCase name="Container component renders with id" duration="2"/>
+    <testCase name="Container component renders with className" duration="2"/>
+    <testCase name="Container component renders with other props" duration="1"/>
+  </file>
+  <file path="/Users/caym/Documents/code/frontend/src/components/quarks/Reader/Reader.test.tsx">
+    <testCase name="Reader component should call onChange function when input value changes" duration="12"/>
+    <testCase name="Reader component should not call onChange function when it is not provided" duration="3"/>
+    <testCase name="Reader component should render with custom className" duration="5"/>
+    <testCase name="Reader component should render with default className" duration="2"/>
+  </file>
+  <file path="/Users/caym/Documents/code/frontend/src/components/quarks/Typography/Text.test.tsx">
+    <testCase name="Typography renders the correct tag" duration="7"/>
+    <testCase name="Typography renders the correct text" duration="1"/>
+    <testCase name="Typography renders additional classes" duration="1"/>
+    <testCase name="Typography renders additional props" duration="1"/>
+    <testCase name="Typography renders the correct role" duration="2"/>
+    <testCase name="Typography renders the correct role when passed" duration="1"/>
+  </file>
+  <file path="/Users/caym/Documents/code/frontend/src/components/quarks/Trigger/Trigger.test.tsx">
+    <testCase name="Trigger renders children" duration="8"/>
+    <testCase name="Trigger calls onClick when clicked" duration="6"/>
+    <testCase name="Trigger applies className prop" duration="3"/>
+  </file>
+</testExecutions>

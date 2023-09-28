@@ -1,41 +1,45 @@
-import { FC } from 'react';
-import { Reader, withDescription, withError, withLabel, withStyle, withThemeContext } from 'src/components';
-import { MakeInputTheme, useTheme } from 'src/theme';
+import { type FC } from 'react'
+import { Reader, withDescription, withError, withLabel, withStyle, withThemeContext } from 'src/components'
+import { MakeInputTheme, useTheme } from 'src/theme'
 
-import { IInput } from './type';
+import { type IInput } from './type'
 
-let Input : FC<IInput> = ({ label, error, description, ...props}: IInput) => {
-  const { theme } = useTheme();
-  const inputStyle = MakeInputTheme(theme);
+const Input: FC<IInput> = ({ label, error, description, ...props }: IInput) => {
+  const { theme } = useTheme()
+  const inputStyle = MakeInputTheme(theme)
 
   let ReaderInput = withThemeContext({ Component: Reader })
 
   ReaderInput = withStyle({
     Component: ReaderInput,
-    style: inputStyle.input,
-  });
-  
-  if(label) ReaderInput = withLabel({
-    Component: ReaderInput,
-    label,
-    style: inputStyle.label,
-  });
-  
-  if(error) ReaderInput = withError({
-    Component: ReaderInput,
-    error,
-    style: inputStyle.error,
-  });
+    style: inputStyle.input
+  })
 
-  if(description) ReaderInput = withDescription({
-    Component: ReaderInput,
-    description,
-    style: inputStyle.description,
-  });
+  if (label) {
+    ReaderInput = withLabel({
+      Component: ReaderInput,
+      label,
+      style: inputStyle.label
+    })
+  }
 
+  if (error) {
+    ReaderInput = withError({
+      Component: ReaderInput,
+      error,
+      style: inputStyle.error
+    })
+  }
 
-  return <ReaderInput {...props} />;
-};
+  if (description) {
+    ReaderInput = withDescription({
+      Component: ReaderInput,
+      description,
+      style: inputStyle.description
+    })
+  }
 
+  return <ReaderInput {...props} />
+}
 
-export default Input;
+export default Input

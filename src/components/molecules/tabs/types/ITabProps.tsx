@@ -1,8 +1,8 @@
-import { ReactNode } from 'react';
-import { IComponent } from 'src/types';
+import { type ReactNode } from 'react'
+import { type IComponent } from 'src/types'
 
 export interface ITabProps extends IComponent {
-  name: string;
-  label: string;
-  children: ReactNode;
+  name: string
+  label: string
+  children: ReactNode
 }

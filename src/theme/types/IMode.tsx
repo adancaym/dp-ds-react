@@ -1,16 +1,16 @@
 /**
  * Interface representing a color mode with a dark and light palette.
  */
-import { IPalette } from "./IPalette";
+import { type IPalette } from './IPalette'
 
 export interface IMode {
   /**
    * The dark palette for the color mode.
    */
-  dark: IPalette;
+  dark: IPalette
 
   /**
    * The light palette for the color mode.
    */
-  light: IPalette;
+  light: IPalette
 }

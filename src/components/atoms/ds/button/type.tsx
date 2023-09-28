@@ -1,6 +1,5 @@
-import { IWithChildren, IWithColortButton, IWithDescription, IWithSize, IWithStyle } from 'src/components';
-import { IComponent } from 'src/types';
-
+import { type IWithChildren, type IWithColortButton, type IWithDescription, type IWithSize, type IWithStyle } from 'src/components'
+import { type IComponent } from 'src/types'
 
 export type ButtonProps =
   IComponent &
@@ -9,5 +8,5 @@ export type ButtonProps =
   IWithColortButton &
   IWithDescription &
   IWithStyle & {
-    type?: "submit" | "reset" | "button"
-  };
+    type?: 'submit' | 'reset' | 'button'
+  }

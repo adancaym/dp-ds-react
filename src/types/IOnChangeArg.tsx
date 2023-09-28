@@ -1,3 +1,3 @@
-import { ChangeEvent } from "react";
+import { type ChangeEvent } from 'react'
 
-export type IOnChangeArg = ChangeEvent<HTMLInputElement>;
+export type IOnChangeArg = ChangeEvent<HTMLInputElement>

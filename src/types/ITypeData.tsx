@@ -1,1 +1,1 @@
-export type ITypeDataInput = string | number | undefined;
+export type ITypeDataInput = string | number | undefined

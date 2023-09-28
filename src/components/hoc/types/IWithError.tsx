@@ -1,3 +1,3 @@
 export interface IWithError {
-  error?: string;
+  error?: string
 }

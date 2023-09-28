@@ -1,7 +1,7 @@
-import { IPositionVariant } from "./IPositionVariant";
+import { type IPositionVariant } from './IPositionVariant'
 
 export interface INavigation {
-  path: string;
-  label: string;
-  position: IPositionVariant;
+  path: string
+  label: string
+  position: IPositionVariant
 }

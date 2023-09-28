@@ -1,308 +1,305 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { type Meta, type StoryObj } from '@storybook/react'
 
-import Text from './Text';
+import Text from './Text'
 
-export default {
-    tags: ['autodocs'],
+export const meta: Meta = {
+  tags: ['autodocs'],
   component: Text,
   argTypes: {
     as: {
       control: {
         type: 'select',
-        options: ['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
-      },
+        options: ['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6']
+      }
     },
     children: {
       control: {
-        type: 'text',
-      },
+        type: 'text'
+      }
     },
     className: {
       control: {
-        type: 'text',
-      },
+        type: 'text'
+      }
     },
     role: {
       control: {
-        type: 'text',
-      },
-    },
-  },
-} as Meta;
+        type: 'text'
+      }
+    }
+  }
+}
 
-type Story = StoryObj<typeof Text>;
+type Story = StoryObj<typeof Text>
 
 export const Default: Story = {
   args: {
-    children: 'Text',
-  },
-};
+    children: 'Text'
+  }
+}
 
 export const Heading: Story = {
   args: {
     as: 'h1',
-    children: 'Heading',
-  },
-};
+    children: 'Heading'
+  }
+}
 
 export const Paragraph: Story = {
   args: {
     as: 'p',
-    children: 'Paragraph',
-  },
-};
+    children: 'Paragraph'
+  }
+}
 
 export const Heading1: Story = {
   args: {
     as: 'h1',
-    children: 'Heading 1',
-  },
-};
+    children: 'Heading 1'
+  }
+}
 
 export const Heading2: Story = {
   args: {
     as: 'h2',
-    children: 'Heading 2',
-  },
-};
+    children: 'Heading 2'
+  }
+}
 
 export const Heading3: Story = {
   args: {
     as: 'h3',
-    children: 'Heading 3',
-  },
-};
+    children: 'Heading 3'
+  }
+}
 
 export const Heading4: Story = {
   args: {
     as: 'h4',
-    children: 'Heading 4',
-  },
-};
+    children: 'Heading 4'
+  }
+}
 
 export const Heading5: Story = {
   args: {
     as: 'h5',
-    children: 'Heading 5',
-  },
-};
+    children: 'Heading 5'
+  }
+}
 
 export const Heading6: Story = {
   args: {
     as: 'h6',
-    children: 'Heading 6',
-  },
-};
+    children: 'Heading 6'
+  }
+}
 
 export const Span: Story = {
   args: {
     as: 'span',
-    children: 'Span',
-  },
-};
+    children: 'Span'
+  }
+}
 
 export const Strong: Story = {
   args: {
     as: 'strong',
-    children: 'Strong',
-  },
-};
+    children: 'Strong'
+  }
+}
 
 export const Emphasis: Story = {
   args: {
     as: 'em',
-    children: 'Emphasis',
-  },
-};
+    children: 'Emphasis'
+  }
+}
 
 export const Mark: Story = {
   args: {
     as: 'mark',
-    children: 'Mark',
-  },
-};
+    children: 'Mark'
+  }
+}
 
 export const Small: Story = {
   args: {
     as: 'small',
-    children: 'Small',
-  },
-};
+    children: 'Small'
+  }
+}
 
 export const Deleted: Story = {
   args: {
     as: 'del',
-    children: 'Deleted',
-  },
-};
+    children: 'Deleted'
+  }
+}
 
 export const Inserted: Story = {
   args: {
     as: 'ins',
-    children: 'Inserted',
-  },
-};
+    children: 'Inserted'
+  }
+}
 
 export const Subscript: Story = {
   args: {
     as: 'sub',
-    children: 'Subscript',
-  },
-};
+    children: 'Subscript'
+  }
+}
 
 export const Superscript: Story = {
   args: {
     as: 'sup',
-    children: 'Superscript',
-  },
-};
+    children: 'Superscript'
+  }
+}
 
 export const Code: Story = {
   args: {
     as: 'code',
-    children: 'alert("Hello World")',
-  },
-};
+    children: 'alert("Hello World")'
+  }
+}
 
 export const Keyboard: Story = {
   args: {
     as: 'kbd',
-    children: 'Ctrl + C',
-  },
-};
+    children: 'Ctrl + C'
+  }
+}
 
 export const Sample: Story = {
   args: {
     as: 'samp',
-    children: 'Sample',
-  },
-};
+    children: 'Sample'
+  }
+}
 
 export const Variable: Story = {
   args: {
     as: 'var',
-    children: 'Variable',
-  },
-};
+    children: 'Variable'
+  }
+}
 
 export const Time: Story = {
   args: {
     as: 'time',
-    children: 'Time',
-  },
-};
-
+    children: 'Time'
+  }
+}
 
 export const Blockquote: Story = {
   args: {
     as: 'blockquote',
-    children: 'Blockquote',
-  },
-};
+    children: 'Blockquote'
+  }
+}
 
 export const Address: Story = {
   args: {
     as: 'address',
-    children: 'Address',
-  },
-};
+    children: 'Address'
+  }
+}
 
 export const Preformatted: Story = {
   args: {
     as: 'pre',
-    children: 'Preformatted',
-  },
-};
+    children: 'Preformatted'
+  }
+}
 
 export const UnorderedList: Story = {
   args: {
     as: 'ul',
-    children: 'Unordered List',
-  },
-};
+    children: 'Unordered List'
+  }
+}
 
 export const OrderedList: Story = {
   args: {
     as: 'ol',
-    children: 'Ordered List',
-  },
-};
+    children: 'Ordered List'
+  }
+}
 
 export const DescriptionList: Story = {
   args: {
     as: 'dl',
-    children: 'Description List',
-  },
-};
+    children: 'Description List'
+  }
+}
 
 export const DescriptionTerm: Story = {
   args: {
     as: 'dt',
-    children: 'Description Term',
-  },
-};
+    children: 'Description Term'
+  }
+}
 
 export const DescriptionDetails: Story = {
   args: {
     as: 'dd',
-    children: 'Description Details',
-  },
-};
+    children: 'Description Details'
+  }
+}
 
 export const Figure: Story = {
   args: {
     as: 'figure',
-    children: 'Figure',
-  },
-};
+    children: 'Figure'
+  }
+}
 
 export const FigureCaption: Story = {
   args: {
     as: 'figcaption',
-    children: 'Figure Caption',
-  },
-};
+    children: 'Figure Caption'
+  }
+}
 
 export const Details: Story = {
   args: {
     as: 'details',
-    children: 'Details',
-  },
-};
+    children: 'Details'
+  }
+}
 
 export const Summary: Story = {
   args: {
     as: 'summary',
-    children: 'Summary',
-  },
-};
+    children: 'Summary'
+  }
+}
 
 export const Main: Story = {
   args: {
     as: 'main',
-    children: 'Main',
-  },
-};
+    children: 'Main'
+  }
+}
 
 export const Article: Story = {
   args: {
     as: 'article',
-    children: 'Article',
-  },
-};
+    children: 'Article'
+  }
+}
 
 export const Aside: Story = {
   args: {
     as: 'aside',
-    children: 'Aside',
-  },
-};
+    children: 'Aside'
+  }
+}
 
 export const Footer: Story = {
   args: {
     as: 'footer',
-    children: 'Footer',
-  },
-};
-
-
+    children: 'Footer'
+  }
+}

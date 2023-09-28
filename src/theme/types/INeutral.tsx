@@ -5,10 +5,10 @@ export interface INeutral {
   /**
    * The hex code for the white color.
    */
-  white: string;
+  white: string
 
   /**
    * The hex code for the black color.
    */
-  black: string;
+  black: string
 }

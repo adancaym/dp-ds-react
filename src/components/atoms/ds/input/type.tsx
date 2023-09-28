@@ -1,11 +1,10 @@
-import { IReaderProps, IWithDescription, IWithError, IWithLabel, IWithPlaceholder } from 'src/components';
-import { IComponent } from 'src/types';
+import { type IReaderProps, type IWithDescription, type IWithError, type IWithLabel, type IWithPlaceholder } from 'src/components'
+import { type IComponent } from 'src/types'
 
-
-export type IInput = 
+export type IInput =
   IReaderProps &
   IComponent &
   IWithPlaceholder &
   IWithDescription &
   IWithError &
-  IWithLabel;
+  IWithLabel

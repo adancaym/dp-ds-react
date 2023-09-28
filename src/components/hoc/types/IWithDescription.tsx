@@ -1,3 +1,3 @@
 export interface IWithDescription {
-  description?: string;
+  description?: string
 }

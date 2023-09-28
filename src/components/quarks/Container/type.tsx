@@ -1,18 +1,16 @@
-import { DetailedHTMLProps, HTMLAttributes } from 'react';
-import { IComponent } from 'src/types';
+import { type DetailedHTMLProps, type HTMLAttributes } from 'react'
+import { type IComponent } from 'src/types'
 
-import { IWithChildren, IWithStyle } from '../../hoc';
+import { type IWithChildren, type IWithStyle } from '../../hoc'
 
 export interface TypeContainer extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
 
 }
 
+export interface IContainer extends
+  TypeContainer,
+  IComponent,
+  IWithStyle,
+  IWithChildren {
 
-export interface IContainer extends 
-TypeContainer,
-IComponent, 
-IWithStyle, 
-IWithChildren {
-    
 }
-

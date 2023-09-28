@@ -1,8 +1,8 @@
-import { ITabProps } from "./ITabProps";
+import { type ITabProps } from './ITabProps'
 
 export interface ITabContextProps {
-  tabs: ITabProps[];
-  addTab: (tab: ITabProps) => void;
-  currentTab: string | undefined;
-  setCurrentTab: (tab: string) => void;
+  tabs: ITabProps[]
+  addTab: (tab: ITabProps) => void
+  currentTab: string | undefined
+  setCurrentTab: (tab: string) => void
 }

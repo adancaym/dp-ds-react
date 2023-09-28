@@ -1,1 +1,1 @@
-export * from './TehemeProvider';
+export * from './TehemeProvider'

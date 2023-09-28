@@ -1,1 +1,1 @@
-export type IPositionVariant = "left" | "right" | "center";
+export type IPositionVariant = 'left' | 'right' | 'center'

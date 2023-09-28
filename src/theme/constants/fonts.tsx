@@ -1,4 +1,4 @@
 export const fonts = {
-  heading: "sans-serif",
-  body: "sans-serif",
-};
+  heading: 'sans-serif',
+  body: 'sans-serif'
+}

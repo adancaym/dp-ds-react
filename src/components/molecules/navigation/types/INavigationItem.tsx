@@ -1,6 +1,6 @@
-import { ReactNode } from "react";
-import { INavigation } from "./INavigation";
+import { type ReactNode } from 'react'
+import { type INavigation } from './INavigation'
 
 export type INavigationItem = ReactNode & {
-  props: INavigation;
-};
+  props: INavigation
+}

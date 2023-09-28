@@ -1,3 +1,3 @@
-export * from './ITabContextProps';
-export * from './ITabProps';
-export * from './ITabsProps';
+export * from './ITabContextProps'
+export * from './ITabProps'
+export * from './ITabsProps'

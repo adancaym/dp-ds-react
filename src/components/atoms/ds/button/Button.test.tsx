@@ -1,60 +1,60 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react'
 
-import Button from './Button';
+import Button from './Button'
 
-describe("Button", () => {
-  it("renders button text", () => {
-    const buttonText = "Click me";
-    render(<Button>{buttonText}</Button>);
+describe('Button', () => {
+  it('renders button text', () => {
+    const buttonText = 'Click me'
+    render(<Button>{buttonText}</Button>)
 
-    const element = screen.getByText(buttonText);
-    expect(element).toBeInTheDocument();
-  });
+    const element = screen.getByText(buttonText)
+    expect(element).toBeInTheDocument()
+  })
 
-  it("renders button with type submit", () => {
-    const buttonText = "Click me";
-    render(<Button type="submit">{buttonText}</Button>);
+  it('renders button with type submit', () => {
+    const buttonText = 'Click me'
+    render(<Button type="submit">{buttonText}</Button>)
 
-    const element = screen.getByRole("button");
-    expect(element).toHaveAttribute("type", "submit");
-  });
+    const element = screen.getByRole('button')
+    expect(element).toHaveAttribute('type', 'submit')
+  })
 
-  it("renders button with type button", () => {
-    const buttonText = "Click me";
-    render(<Button type="button">{buttonText}</Button>);
+  it('renders button with type button', () => {
+    const buttonText = 'Click me'
+    render(<Button type="button">{buttonText}</Button>)
 
-    const element = screen.getByRole("button");
-    expect(element).toHaveAttribute("type", "button");
-  });
+    const element = screen.getByRole('button')
+    expect(element).toHaveAttribute('type', 'button')
+  })
 
-  it("renders button with type reset", () => {
-    const buttonText = "Click me";
-    render(<Button type="reset">{buttonText}</Button>);
+  it('renders button with type reset', () => {
+    const buttonText = 'Click me'
+    render(<Button type="reset">{buttonText}</Button>)
 
-    const element = screen.getByRole("button");
-    expect(element).toHaveAttribute("type", "reset");
-  });
+    const element = screen.getByRole('button')
+    expect(element).toHaveAttribute('type', 'reset')
+  })
 
-  it("renders button with description", () => {
-    const buttonText = "Click me";
-    const buttonDescription = "This is a button";
-    render(<Button description={buttonDescription}>{buttonText}</Button>);
+  it('renders button with description', () => {
+    const buttonText = 'Click me'
+    const buttonDescription = 'This is a button'
+    render(<Button description={buttonDescription}>{buttonText}</Button>)
 
-    const element = screen.getByText(buttonDescription);
-    expect(element).toBeInTheDocument();
-  });
+    const element = screen.getByText(buttonDescription)
+    expect(element).toBeInTheDocument()
+  })
 
-  it("renders button with variant primary", () => {
-    const buttonText = "Click me";
-    render(<Button color="primary">{buttonText}</Button>);
-    const element = screen.getByRole("button");
-    expect(element).toHaveClass("primary");
-  });
+  it('renders button with variant primary', () => {
+    const buttonText = 'Click me'
+    render(<Button color="primary">{buttonText}</Button>)
+    const element = screen.getByRole('button')
+    expect(element).toHaveClass('primary')
+  })
 
-  it("renders button with variant secondary", () => {
-    const buttonText = "Click me";
-    render(<Button color="secondary">{buttonText}</Button>);
-    const element = screen.getByRole("button");
-    expect(element).toHaveClass("secondary");
-  });
-});
+  it('renders button with variant secondary', () => {
+    const buttonText = 'Click me'
+    render(<Button color="secondary">{buttonText}</Button>)
+    const element = screen.getByRole('button')
+    expect(element).toHaveClass('secondary')
+  })
+})

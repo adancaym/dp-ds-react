@@ -1,2 +1,2 @@
-export { default as Container } from './Container';
-export * from './type';
+export { default as Container } from './Container'
+export * from './type'

@@ -1,15 +1,15 @@
-import { IPalette } from 'src/theme';
+import { type IPalette } from 'src/theme'
 
-import { borderRadius, fonts, fontWeights, lineHeights, sizes, space } from '../constants';
-import { ButtonProps } from 'src/components';
+import { borderRadius, fonts, fontWeights, lineHeights, sizes, space } from '../constants'
+import { type ButtonProps } from 'src/components'
 
 export const MakeButtonTheme = (
   pallete: IPalette,
-  { color: variant = "primary", size = 'full', style}: ButtonProps
+  { color: variant = 'primary', size = 'full', style }: ButtonProps
 ) => ({
   button: {
     width: sizes[size],
-    outline: "none",
+    outline: 'none',
     backgroundColor: pallete[variant].main,
     color: pallete.text.main,
     fontFamily: fonts.body,
@@ -24,6 +24,6 @@ export const MakeButtonTheme = (
     color: pallete.text.main,
     fontFamily: fonts.body,
     fontWeight: fontWeights.normal,
-    lineHeight: lineHeights.small,
-  },
-});
+    lineHeight: lineHeights.small
+  }
+})

@@ -1,14 +1,14 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import Tabs from "./Tabs";
-import { Tab } from "./components";
+import type { Meta, StoryObj } from '@storybook/react'
+import Tabs from './Tabs'
+import { Tab } from './components'
 
-const meta: Meta<typeof Tabs> = { 
+const meta: Meta<typeof Tabs> = {
   component: Tabs,
-  tags: ["autodocs"],
-};
-export default meta;
+  tags: ['autodocs']
+}
+export default meta
 
-type Story = StoryObj<typeof Tabs>;
+type Story = StoryObj<typeof Tabs>
 
 export const Default: Story = {
   args: {
@@ -21,10 +21,7 @@ export const Default: Story = {
       </Tab>,
       <Tab key="3" label="Tab 3" name="Tab3">
         Tab 3
-      </Tab>,
-    ],
-  },
-};
-
-
-
+      </Tab>
+    ]
+  }
+}

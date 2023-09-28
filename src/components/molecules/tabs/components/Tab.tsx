@@ -1,28 +1,27 @@
-import { useEffect } from 'react';
-import { Container } from 'src/components';
+import { useEffect } from 'react'
+import { Container } from 'src/components'
 
-import { useTabs } from '../hooks';
-import { ITabProps } from '../types';
+import { useTabs } from '../hooks'
+import { type ITabProps } from '../types'
 
 const Tab = (tab: ITabProps) => {
-  const { children, name } = tab;
-  const { addTab, currentTab, tabs } = useTabs();
+  const { children, name } = tab
+  const { addTab, currentTab, tabs } = useTabs()
 
   useEffect(() => {
-    addTab(tab);
-  }, [tab, tabs, addTab]);
+    addTab(tab)
+  }, [tab, tabs, addTab])
 
   const display: () => boolean = () => {
-    if(!currentTab) return tabs.findIndex(({ name }) => name === tab.name) === 0;
+    if (!currentTab) return tabs.findIndex(({ name }) => name === tab.name) === 0
     return currentTab === name
   }
 
-  return(
-    display() ? 
-      <Container role="tab-content" className={`tab-content-${tab.name}`} data-testid={`tab-content-${tab.name}`} children={children} /> : 
-      null
-  );
-};
+  return (
+    display()
+      ? <Container role="tab-content" className={`tab-content-${tab.name}`} data-testid={`tab-content-${tab.name}`} children={children} />
+      : null
+  )
+}
 
-
-export default Tab;
+export default Tab

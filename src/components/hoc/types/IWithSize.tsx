@@ -1,3 +1,3 @@
 export interface IWithSize {
-  size?: 'full' | 'large' | 'medium' | 'small';
+  size?: 'full' | 'large' | 'medium' | 'small'
 }

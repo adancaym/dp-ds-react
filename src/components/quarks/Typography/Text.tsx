@@ -1,17 +1,17 @@
-import { createElement, FC, memo } from 'react';
+import { createElement, type FC, memo } from 'react'
 
-import { IText } from './type';
+import { type IText } from './type'
 
-let Text: FC<IText> = ({ as = "p", children, ...props }: IText) =>
+let Text: FC<IText> = ({ as = 'p', children, ...props }: IText) =>
   createElement(as,
-  {
-    ...props,
-    role: `${props.role ?? 'typography'}`,
-    className: `typography typography-${as} ${props.className ?? ''}`,
-  }, 
-  children
-);
+    {
+      ...props,
+      role: `${props.role ?? 'typography'}`,
+      className: `typography typography-${as} ${props.className ?? ''}`
+    },
+    children
+  )
 
-Text = memo(Text);
+Text = memo(Text)
 
-export default Text;
+export default Text

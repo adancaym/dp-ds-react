@@ -1,6 +1,5 @@
-import { IWithChildren, IWithElementType, IWithStyle } from 'src/components';
-import { IComponent } from 'src/types';
-
+import { type IWithChildren, type IWithElementType, type IWithStyle } from 'src/components'
+import { type IComponent } from 'src/types'
 
 export type IText =
   IComponent &

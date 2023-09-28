@@ -1,15 +1,14 @@
-import { FC, memo } from 'react';
+import { type FC, memo } from 'react'
 
-import { IReaderProps } from './type';
+import { type IReaderProps } from './type'
 
 let Reader: FC<IReaderProps> = (props: IReaderProps) => {
+  const { type = 'text', role = 'input', onChange = (_) => {} } = props
 
-  const {type = `text`, role = `input`, onChange = (_) => {} } = props;
-  
-  const className = `input input-${props.type ?? 'text'} ${props.className ?? ''}`;
+  const className = `input input-${props.type ?? 'text'} ${props.className ?? ''}`
 
   return (
-    <input 
+    <input
       {...props}
       type={type}
       role={role}
@@ -17,11 +16,8 @@ let Reader: FC<IReaderProps> = (props: IReaderProps) => {
       onChange={onChange}
     />
   )
-  
-};
+}
 
-Reader = memo(Reader);
+Reader = memo(Reader)
 
-export default Reader;
-
-
+export default Reader

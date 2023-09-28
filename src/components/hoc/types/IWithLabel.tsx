@@ -1,3 +1,3 @@
 export interface IWithLabel {
-  label?: string;
+  label?: string
 }

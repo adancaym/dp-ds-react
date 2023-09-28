@@ -1,39 +1,45 @@
-import { FC } from "react";
-import { Picker, withDescription, withError, withLabel, withStyle, withThemeContext } from "src/components";
-import { ISelect } from "./type";
-import { useTheme, MakeSelectTheme } from "src/theme";
+import { type FC } from 'react'
+import { Picker, withDescription, withError, withLabel, withStyle, withThemeContext } from 'src/components'
+import { type ISelect } from './type'
+import { useTheme, MakeSelectTheme } from 'src/theme'
 
-let Select: FC<ISelect> = ({ label, error, description, ...props }) => {
-    const {theme} = useTheme();
+const Select: FC<ISelect> = ({ label, error, description, ...props }) => {
+  const { theme } = useTheme()
 
-    const selectStyles = MakeSelectTheme(theme);
+  const selectStyles = MakeSelectTheme(theme)
 
-    let PickerSelect = withThemeContext({Component: Picker});
+  let PickerSelect = withThemeContext({ Component: Picker })
 
-    PickerSelect = withStyle({
-        Component: PickerSelect,
-        style: selectStyles.select,
-    });
+  PickerSelect = withStyle({
+    Component: PickerSelect,
+    style: selectStyles.select
+  })
 
-    if (label) PickerSelect = withLabel({
-        Component: PickerSelect,
-        label,
-        style: selectStyles.label,
-    });
+  if (label) {
+    PickerSelect = withLabel({
+      Component: PickerSelect,
+      label,
+      style: selectStyles.label
+    })
+  }
 
-    if (error) PickerSelect = withError({
-        Component: PickerSelect,
-        error,
-        style: selectStyles.error,
-    });
+  if (error) {
+    PickerSelect = withError({
+      Component: PickerSelect,
+      error,
+      style: selectStyles.error
+    })
+  }
 
-    if (description) PickerSelect = withDescription({
-        Component: PickerSelect,
-        description,
-        style: selectStyles.description,
-    });
+  if (description) {
+    PickerSelect = withDescription({
+      Component: PickerSelect,
+      description,
+      style: selectStyles.description
+    })
+  }
 
-    return <PickerSelect {...props} />
+  return <PickerSelect {...props} />
 }
 
-export default Select;
+export default Select

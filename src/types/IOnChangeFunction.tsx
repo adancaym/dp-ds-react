@@ -1,3 +1,3 @@
-import { IOnChangeArg } from "./IOnChangeArg";
+import { type IOnChangeArg } from './IOnChangeArg'
 
-export type IOnChangeFunction = (_: IOnChangeArg) => void;
+export type IOnChangeFunction = (_: IOnChangeArg) => void

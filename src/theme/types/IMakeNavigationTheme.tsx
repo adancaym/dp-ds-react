@@ -1,4 +1,4 @@
-import { CSSProperties } from "react";
+import { type CSSProperties } from 'react'
 
 /**
  * Defines the interface for the navigation theme.
@@ -7,13 +7,13 @@ export interface IMakeNavigationTheme {
   /**
    * The CSS properties for the toolbar.
    */
-  toolbar: CSSProperties;
+  toolbar: CSSProperties
   /**
    * The CSS properties for the section.
    */
-  section: CSSProperties;
+  section: CSSProperties
   /**
    * The CSS properties for the link.
    */
-  link: CSSProperties;
+  link: CSSProperties
 }

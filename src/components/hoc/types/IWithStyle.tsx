@@ -1,3 +1,3 @@
 export interface IWithStyle {
-  style?: React.CSSProperties;
+  style?: React.CSSProperties
 }

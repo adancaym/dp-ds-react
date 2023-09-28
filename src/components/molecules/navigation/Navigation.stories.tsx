@@ -1,23 +1,23 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { FC } from "react";
-import { BrowserRouter } from 'react-router-dom';
-import { INavigationProps, NavigationItem } from 'src/components';
-import { routes } from "src/components/router/routes";
-import Navigation from "./Navigation";
+import type { Meta, StoryObj } from '@storybook/react'
+import { type FC } from 'react'
+import { BrowserRouter } from 'react-router-dom'
+import { type INavigationProps, NavigationItem } from 'src/components'
+import { routes } from 'src/components/router/routes'
+import Navigation from './Navigation'
 
 const meta: Meta<typeof Navigation> = {
   component: Navigation,
-  tags: ['autodocs'],
-};
+  tags: ['autodocs']
+}
 
-export default meta;
+export default meta
 
 const Template: FC<INavigationProps> = (args) => (
   <BrowserRouter>
     <Navigation {...args} />
   </BrowserRouter>
-);
-type Story = StoryObj<typeof Template>;
+)
+type Story = StoryObj<typeof Template>
 
 const args: INavigationProps = {
   router: routes,
@@ -43,8 +43,8 @@ const args: INavigationProps = {
         position="right"
     />
   ]
-};
+}
 
 export const Default: Story = {
   args
-};
+}
